@@ -446,6 +446,9 @@ void MythRenderOpenGL2::EnableShaderObject(uint obj)
 void MythRenderOpenGL2::SetShaderParams(uint obj, void* vals,
                                         const char* uniform)
 {
+    if (!(m_exts_supported & kGLSL))
+        return;
+
     makeCurrent();
     const float *v = (float*)vals;
 
@@ -472,14 +475,24 @@ void MythRenderOpenGL2::DrawBitmapPriv(uint tex, const QRect *src,
     EnableTextures(tex);
     glBindTexture(m_textures[tex].m_type, tex);
 
-    m_glBindBuffer(GL_ARRAY_BUFFER, m_textures[tex].m_vbo);
     UpdateTextureVertices(tex, src, dst);
-    m_glBufferData(GL_ARRAY_BUFFER, kVertexSize, NULL, GL_STREAM_DRAW);
-    void* target = m_glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
-    if (target)
-        memcpy(target, m_textures[tex].m_vertex_data, kVertexSize);
-    m_glUnmapBuffer(GL_ARRAY_BUFFER);
-
+    if (m_textures[tex].m_vbo)
+    {
+        m_glBindBuffer(GL_ARRAY_BUFFER, m_textures[tex].m_vbo);
+        if (m_exts_used & kGLExtPBufObj)
+        {
+            m_glBufferData(GL_ARRAY_BUFFER, kVertexSize, NULL, GL_STREAM_DRAW);
+            void* target = m_glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+            if (target)
+                memcpy(target, m_textures[tex].m_vertex_data, kVertexSize);
+            m_glUnmapBuffer(GL_ARRAY_BUFFER);
+        }
+        else
+        {
+            m_glBufferData(GL_ARRAY_BUFFER, kVertexSize,
+                m_textures[tex].m_vertex_data, GL_STREAM_DRAW);
+        }
+    }
     m_glEnableVertexAttribArray(VERTEX_INDEX);
     m_glEnableVertexAttribArray(TEXTURE_INDEX);
 
@@ -527,14 +540,24 @@ void MythRenderOpenGL2::DrawBitmapPriv(uint *textures, uint texture_count,
         }
     }
 
-    m_glBindBuffer(GL_ARRAY_BUFFER, m_textures[first].m_vbo);
     UpdateTextureVertices(first, src, dst);
-    m_glBufferData(GL_ARRAY_BUFFER, kVertexSize, NULL, GL_STREAM_DRAW);
-    void* target = m_glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
-    if (target)
-        memcpy(target, m_textures[first].m_vertex_data, kVertexSize);
-    m_glUnmapBuffer(GL_ARRAY_BUFFER);
-
+    if (m_textures[first].m_vbo)
+    {
+        m_glBindBuffer(GL_ARRAY_BUFFER, m_textures[first].m_vbo);
+        if (m_exts_used & kGLExtPBufObj)
+        {
+            m_glBufferData(GL_ARRAY_BUFFER, kVertexSize, NULL, GL_STREAM_DRAW);
+            void* target = m_glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+            if (target)
+                memcpy(target, m_textures[first].m_vertex_data, kVertexSize);
+            m_glUnmapBuffer(GL_ARRAY_BUFFER);
+        }
+        else
+        {
+            m_glBufferData(GL_ARRAY_BUFFER, kVertexSize,
+                m_textures[first].m_vertex_data, GL_STREAM_DRAW);
+        }
+    }
     m_glEnableVertexAttribArray(VERTEX_INDEX);
     m_glEnableVertexAttribArray(TEXTURE_INDEX);
 
@@ -869,7 +892,11 @@ bool MythRenderOpenGL2::ValidateShaderObject(uint obj)
 bool MythRenderOpenGL2::CheckObjectStatus(uint obj)
 {
     int ok;
+#ifdef GL_LINK_STATUS
+    m_glGetProgramiv(obj, GL_LINK_STATUS, &ok);
+#else
     m_glGetProgramiv(obj, GL_OBJECT_LINK_STATUS, &ok);
+#endif
     if (ok > 0)
         return true;
 
@@ -877,7 +904,11 @@ bool MythRenderOpenGL2::CheckObjectStatus(uint obj)
     int infologLength = 0;
     int charsWritten  = 0;
     char *infoLog;
+#ifdef GL_INFO_LOG_LENGTH
+    m_glGetProgramiv(obj, GL_INFO_LOG_LENGTH, &infologLength);
+#else
     m_glGetProgramiv(obj, GL_OBJECT_INFO_LOG_LENGTH, &infologLength);
+#endif
     if (infologLength > 0)
     {
         infoLog = (char *)malloc(infologLength);

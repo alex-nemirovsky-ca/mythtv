@@ -467,8 +467,12 @@ void MythRenderOpenGL::SetTextureFilters(uint tex, uint filt, uint wrap)
     if (filt == GL_LINEAR_MIPMAP_LINEAR)
     {
         mag_filt = GL_LINEAR;
+#ifdef GL_GENERATE_MIPMAP_HINT_SGIS
         glHint(GL_GENERATE_MIPMAP_HINT_SGIS, GL_NICEST);
+#endif
+#ifdef GL_GENERATE_MIPMAP_SGIS
         glTexParameteri(type, GL_GENERATE_MIPMAP_SGIS, GL_TRUE);
+#endif
     }
     glTexParameteri(type, GL_TEXTURE_MIN_FILTER, filt);
     glTexParameteri(type, GL_TEXTURE_MAG_FILTER, mag_filt);
@@ -513,9 +517,11 @@ void MythRenderOpenGL::EnableTextures(uint tex, uint tex_type)
     int type = tex ? m_textures[tex].m_type : tex_type;
     if (type != m_active_tex_type)
     {
+#ifndef USING_OPENGLES
         if (m_active_tex_type)
             glDisable(m_active_tex_type);
         glEnable(type);
+#endif
         m_active_tex_type = type;
     }
     doneCurrent();
@@ -526,7 +532,9 @@ void MythRenderOpenGL::DisableTextures(void)
     if (!m_active_tex_type)
         return;
     makeCurrent();
+#ifndef USING_OPENGLES
     glDisable(m_active_tex_type);
+#endif
     m_active_tex_type = 0;
     doneCurrent();
 }
@@ -806,10 +814,11 @@ void* MythRenderOpenGL::GetProcAddress(const QString &proc) const
             QLibrary::resolve("libGLESv2", (proc + exts[i]).toLatin1().data()));
         if (result)
             break;
-#endif
+#else
         result = reinterpret_cast<void*>(getProcAddress(proc + exts[i]));
         if (result)
             break;
+#endif
     }
     if (result == NULL)
         LOG(VB_GENERAL, LOG_DEBUG, LOC +
@@ -1245,11 +1254,18 @@ void MythRenderOpenGL::GetCachedVBO(GLuint type, const QRect &area)
         m_vboExpiry.append(ref);
 
         m_glBindBuffer(GL_ARRAY_BUFFER, vbo);
-        m_glBufferData(GL_ARRAY_BUFFER, kTextureOffset, NULL, GL_STREAM_DRAW);
-        void* target = m_glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
-        if (target)
-            memcpy(target, vertices, kTextureOffset);
-        m_glUnmapBuffer(GL_ARRAY_BUFFER);
+        if (m_exts_used & kGLExtPBufObj)
+        {
+            m_glBufferData(GL_ARRAY_BUFFER, kTextureOffset, NULL, GL_STREAM_DRAW);
+            void* target = m_glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
+            if (target)
+                memcpy(target, vertices, kTextureOffset);
+            m_glUnmapBuffer(GL_ARRAY_BUFFER);
+        }
+        else
+        {
+            m_glBufferData(GL_ARRAY_BUFFER, kTextureOffset, vertices, GL_STREAM_DRAW);
+        }
 
         ExpireVBOS(MAX_VERTEX_CACHE);
         return;
@@ -1334,9 +1350,11 @@ uint MythRenderOpenGL::GetBufferSize(QSize size, uint fmt, uint type)
         case GL_UNSIGNED_BYTE:
             bytes = sizeof(GLubyte);
             break;
+#ifdef GL_UNSIGNED_SHORT_8_8_MESA
         case GL_UNSIGNED_SHORT_8_8_MESA:
             bytes = sizeof(GLushort);
             break;
+#endif
         case GL_FLOAT:
             bytes = sizeof(GLfloat);
             break;
