@@ -446,6 +446,9 @@ MythPainterWindowQt::MythPainterWindowQt(MythMainWindow *win,
                    : QWidget(win),
                      parent(win), d(priv)
 {
+#ifdef USE_OPENGL_QT5
+    setAttribute(Qt::WA_NoSystemBackground);
+#endif
 }
 
 void MythPainterWindowQt::paintEvent(QPaintEvent *pe)
@@ -828,12 +831,18 @@ void MythMainWindow::drawScreen(void)
     d->repaintRegion = QRegion(QRect(0, 0, 0, 0));
 }
 
-void MythMainWindow::draw(void)
+void MythMainWindow::draw(MythPainter *painter /* = 0 */)
 {
-    if (!d->painter)
+    if (!painter)
+        painter = d->painter;
+
+    if (!painter)
         return;
 
-    d->painter->Begin(d->paintwin);
+    painter->Begin(d->paintwin);
+
+    if (!painter->SupportsClipping())
+        d->repaintRegion = QRegion(d->uiScreenRect);
 
     QVector<QRect> rects = d->repaintRegion.rects();
 
@@ -843,7 +852,7 @@ void MythMainWindow::draw(void)
             continue;
 
         if (rects[i] != d->uiScreenRect)
-            d->painter->SetClipRect(rects[i]);
+            painter->SetClipRect(rects[i]);
 
         QVector<MythScreenStack *>::Iterator it;
         for (it = d->stackList.begin(); it != d->stackList.end(); ++it)
@@ -855,12 +864,13 @@ void MythMainWindow::draw(void)
             for (screenit = redrawList.begin(); screenit != redrawList.end();
                  ++screenit)
             {
-                (*screenit)->Draw(d->painter, 0, 0, 255, rects[i]);
+                (*screenit)->Draw(painter, 0, 0, 255, rects[i]);
             }
         }
     }
 
-    d->painter->End();
+    painter->End();
+    d->repaintRegion = QRegion();
 }
 
 // virtual
