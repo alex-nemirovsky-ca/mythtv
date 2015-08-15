@@ -132,6 +132,7 @@ Advanced options (experts only):
   --disable-vdpau          disable NVidia VDPAU hardware acceleration.
   --disable-crystalhd      disable Broadcom CrystalHD hardware decoder support
   --disable-vaapi          disable VAAPI hardware accelerated video decoding
+  --disable-openmax        disable OpenMAX hardware accelerated video decoding
   --disable-dxva2          disable hardware accelerated decoding on windows
   --disable-opengl-video   disable OpenGL based video display
   --disable-quartz-video   disable Mac OS X CoreVideo based video display
@@ -1449,6 +1450,7 @@ HWACCEL_LIST="
     vaapi
     vda
     vdpau
+    openmax
 "
 
 LIBRARY_LIST="
@@ -1871,6 +1873,7 @@ USING_LIST='
     opengles
     vaapi
     vdpau
+    openmax
 '
 
 CMDLINE_SELECT="
@@ -4919,6 +4922,12 @@ if ! disabled vda && ! enabled ppc; then
     check_header VideoDecodeAcceleration/VDADecoder.h && enable vda
 fi
 
+# check for OpenMAX header & lib
+if ! disabled openmax; then
+    check_header 'IL/OMX_Core.h' && enable openmax
+fi
+disabled openmax || check_lib 'IL/OMX_Core.h' OMX_Init -lopenmaxil || disable openmax
+
 #End MythTV check
 
 if ! disabled w32threads && ! enabled pthreads; then
@@ -6014,6 +6023,7 @@ if enabled x11 ; then
   echo "VDPAU support             ${vdpau-no}"
   echo "VAAPI support             ${vaapi-no}"
   echo "CrystalHD support         ${crystalhd-no}"
+  echo "OpenMAX support           ${openmax-no}"
 fi
   echo "OpenGL video              ${opengl_video-no}"
   if test x"$target_os" = x"darwin" ; then
