@@ -1020,7 +1020,8 @@ void VideoOutput::DoPipResize(int pipwidth, int pipheight)
     pip_video_size   = vid_size;
     pip_display_size = pip_desired_display_size;
 
-    int sz = pip_display_size.height() * pip_display_size.width() * 3 / 2;
+    uint sz = buffersize(FMT_YV12, pip_display_size.width(),
+                                   pip_display_size.height());
     pip_tmp_buf = new unsigned char[sz];
     pip_tmp_buf2 = new unsigned char[sz];
 
@@ -1116,10 +1117,10 @@ void VideoOutput::ShowPIP(VideoFrame  *frame,
     }
 
     QRect position = GetPIPRect(loc, pipplayer);
+
     pip_desired_display_size = position.size();
 
     // Scale the image if we have to...
-    unsigned char *pipbuf = pipimage->buf;
     if (pipw != pip_desired_display_size.width() ||
         piph != pip_desired_display_size.height())
     {
@@ -1137,34 +1138,41 @@ void VideoOutput::ShowPIP(VideoFrame  *frame,
 
             avpicture_fill(&img_in, (uint8_t *)pipimage->buf, PIX_FMT_YUV420P,
                            pipw, piph);
+            img_in.data[0] = pipimage->buf + pipimage->offsets[0];
+            img_in.data[1] = pipimage->buf + pipimage->offsets[1];
+            img_in.data[2] = pipimage->buf + pipimage->offsets[2];
+            img_in.linesize[0] = pipimage->pitches[0];
+            img_in.linesize[1] = pipimage->pitches[1];
+            img_in.linesize[2] = pipimage->pitches[2];
 
             sws_scale(pip_scaling_context, img_in.data, img_in.linesize, 0,
                       piph, img_out.data, img_out.linesize);
 
-            if (pipActive)
-            {
-                AVPicture img_padded;
-                avpicture_fill(
-                    &img_padded, (uint8_t *)pip_tmp_buf2, PIX_FMT_YUV420P,
-                    pip_display_size.width(), pip_display_size.height());
-
-                int color[3] = { 20, 0, 200 }; //deep red YUV format
-                av_picture_pad(&img_padded, &img_out,
-                               pip_display_size.height(),
-                               pip_display_size.width(),
-                               PIX_FMT_YUV420P, 10, 10, 10, 10, color);
-
-                pipbuf = pip_tmp_buf2;
-            }
-            else
-            {
-                pipbuf = pip_tmp_buf;
-            }
-
             pipw = pip_display_size.width();
             piph = pip_display_size.height();
 
-            init(&pip_tmp_image, FMT_YV12, pipbuf, pipw, piph, sizeof(*pipbuf));
+            if (pipActive)
+            {
+                AVPicture img_padded;
+                avpicture_fill( &img_padded, (uint8_t *)pip_tmp_buf2,
+                    PIX_FMT_YUV420P, pipw, piph);
+
+                int color[3] = { 20, 0, 200 }; //deep red YUV format
+                av_picture_pad(&img_padded, &img_out, piph, pipw,
+                               PIX_FMT_YUV420P, 4, 4, 4, 4, color);
+
+                int offsets[3] = {0, img_padded.data[1] - img_padded.data[0],
+                                    img_padded.data[2] - img_padded.data[0] };
+                init(&pip_tmp_image, FMT_YV12, img_padded.data[0], pipw, piph,
+                    sizeof(int), img_padded.linesize, offsets);
+            }
+            else
+            {
+                int offsets[3] = {0, img_out.data[1] - img_out.data[0],
+                                    img_out.data[2] - img_out.data[0] };
+                init(&pip_tmp_image, FMT_YV12, img_out.data[0], pipw, piph,
+                    sizeof(int), img_out.linesize, offsets);
+            }
         }
     }
 
@@ -1177,15 +1185,17 @@ void VideoOutput::ShowPIP(VideoFrame  *frame,
 
         int pip_height = pip_tmp_image.height;
         int height[3] = { pip_height, pip_height>>1, pip_height>>1 };
+        int pip_width = pip_tmp_image.width;
+        int widths[3] = { pip_width, pip_width>>1, pip_width>>1 };
 
         for (int p = 0; p < 3; p++)
         {
-            for (int h = 2; h < height[p]; h++)
+            for (int h = pipActive ? 0 : 1; h < height[p]; h++)
             {
                 memcpy((frame->buf + frame->offsets[p]) + (h + yoff2[p]) *
                        frame->pitches[p] + xoff2[p],
                        (pip_tmp_image.buf + pip_tmp_image.offsets[p]) + h *
-                       pip_tmp_image.pitches[p], pip_tmp_image.pitches[p]);
+                       pip_tmp_image.pitches[p], widths[p]);
             }
         }
     }
