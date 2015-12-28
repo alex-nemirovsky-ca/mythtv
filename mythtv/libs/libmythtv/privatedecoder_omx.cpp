@@ -4,9 +4,9 @@
 #include <cassert>
 #include <cstddef>
 
-#include <IL/OMX_Video.h>
+#include <OMX_Video.h>
 #ifdef USING_BROADCOM
-#include <IL/OMX_Broadcom.h>
+#include <OMX_Broadcom.h>
 #endif
 
 #include <QMutexLocker>
@@ -18,6 +18,7 @@ extern "C" {
 
 #include "avformatdecoder.h"
 #include "myth_imgconvert.h"
+#include "mythcorecontext.h"
 #include "mythlogging.h"
 #include "omxcontext.h"
 using namespace omxcontext;
@@ -33,6 +34,13 @@ using namespace omxcontext;
 #define FRAMESETHDR(f,h) ((f)->priv[2] = reinterpret_cast<unsigned char* >(h))
 #define FRAME2HDR(f) ((OMX_BUFFERHEADERTYPE*)((f)->priv[2]))
 #define HDR2FRAME(h) ((VideoFrame*)((h)->pAppPrivate))
+
+// Component name
+#ifdef USING_BELLAGIO
+# define VIDEO_DECODE "" // Not implemented
+#else
+# define VIDEO_DECODE "video_decode"
+#endif
 
 /*
  * Types
@@ -80,7 +88,8 @@ void PrivateDecoderOMX::GetDecoders(render_opts &opts)
     (*opts.equiv_decoders)[s_name].append("dummy");
 }
 
-PrivateDecoderOMX::PrivateDecoderOMX() : m_videc("video_decode", *this),
+PrivateDecoderOMX::PrivateDecoderOMX() :
+    m_videc(gCoreContext->GetSetting("OMXVideoDecode", VIDEO_DECODE), *this),
     m_filter(0), m_bStartTime(false),
 #ifdef USING_BROADCOM
     m_eMode(OMX_InterlaceFieldsInterleavedUpperFirst), m_bRepeatFirstField(false),
@@ -124,11 +133,11 @@ QString PrivateDecoderOMX::GetName(void)
 bool PrivateDecoderOMX::Init(const QString &decoder, PlayerFlags flags,
     AVCodecContext *avctx)
 {
-    LOG(VB_PLAYBACK, LOG_DEBUG, LOC + __func__ + QString(
-            "(decoder=%1 flags=%2) - begin").arg(decoder).arg(flags));
-
     if (decoder != s_name || !(flags & kDecodeAllowEXT) || !avctx)
         return false;
+
+    LOG(VB_PLAYBACK, LOG_DEBUG, LOC + __func__ + QString(
+            "(decoder=%1 flags=%2) - begin").arg(decoder).arg(flags));
 
     if (getenv("NO_OPENMAX"))
     {
@@ -279,7 +288,7 @@ bool PrivateDecoderOMX::Init(const QString &decoder, PlayerFlags flags,
     if (def.nBufferCountActual < 2U ||
         def.nBufferCountActual < def.nBufferCountMin)
     {
-        def.nBufferCountActual = std::max(2U, def.nBufferCountMin);
+        def.nBufferCountActual = std::max(OMX_U32(2), def.nBufferCountMin);
         e = m_videc.SetParameter(OMX_IndexParamPortDefinition, &def);
         if (e != OMX_ErrorNone)
         {
@@ -1145,6 +1154,7 @@ OMX_ERRORTYPE PrivateDecoderOMX::SettingsChanged(AVCodecContext *avctx)
     }
 #endif // USING_BROADCOM
 
+#ifdef USING_BROADCOM
     if (VERBOSE_LEVEL_CHECK(VB_PLAYBACK, LOG_INFO))
     {
         OMX_CONFIG_POINTTYPE aspect;
@@ -1153,6 +1163,7 @@ OMX_ERRORTYPE PrivateDecoderOMX::SettingsChanged(AVCodecContext *avctx)
             LOG(VB_PLAYBACK, LOG_INFO, LOC + QString("Pixel aspect x/y = %1/%2")
                 .arg(aspect.nX).arg(aspect.nY) );
     }
+#endif
 
     ComponentCB PrivateDecoderOMX::*allocBuffers =
         &PrivateDecoderOMX::AllocOutputBuffersCB; // -> member fn
@@ -1189,6 +1200,7 @@ bool PrivateDecoderOMX::HasBufferedFrames(void)
     return !m_obufs.isEmpty();
 }
 
+#ifdef USING_BROADCOM
 OMX_ERRORTYPE PrivateDecoderOMX::GetAspect(
     OMX_CONFIG_POINTTYPE &point, int index) const
 {
@@ -1201,6 +1213,7 @@ OMX_ERRORTYPE PrivateDecoderOMX::GetAspect(
                 "IndexParamBrcmPixelAspectRatio error %1").arg(Error2String(e)));
     return e;
 }
+#endif
 
 #ifdef USING_BROADCOM
 OMX_ERRORTYPE PrivateDecoderOMX::GetInterlace(
