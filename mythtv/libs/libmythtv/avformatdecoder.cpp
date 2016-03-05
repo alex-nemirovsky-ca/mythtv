@@ -3576,6 +3576,7 @@ bool AvFormatDecoder::PreProcessVideoPacket(AVStream *curstream, AVPacket *pkt)
 
 bool AvFormatDecoder::ProcessVideoPacket(AVStream *curstream, AVPacket *pkt)
 {
+    LOG(VB_PLAYBACK, LOG_DEBUG, LOC + __func__ + " - entered");
     int ret = 0, gotpicture = 0;
     int64_t pts = 0;
     AVCodecContext *context = curstream->codec;
@@ -3678,6 +3679,7 @@ bool AvFormatDecoder::ProcessVideoPacket(AVStream *curstream, AVPacket *pkt)
 
 bool AvFormatDecoder::ProcessVideoFrame(AVStream *stream, AVFrame *mpa_pic)
 {
+    LOG(VB_PLAYBACK, LOG_DEBUG, LOC + __func__ + " - entered");
     AVCodecContext *context = stream->codec;
 
     // We need to mediate between ATSC and SCTE data when both are present.  If
@@ -4611,6 +4613,7 @@ static void extract_mono_channel(uint channel, AudioInfo *audioInfo,
 bool AvFormatDecoder::ProcessAudioPacket(AVStream *curstream, AVPacket *pkt,
                                          DecodeType decodetype)
 {
+    LOG(VB_PLAYBACK, LOG_DEBUG, LOC + __func__ + " - begin");
     AVCodecContext *ctx = curstream->codec;
     int ret             = 0;
     int data_size       = 0;
@@ -4693,7 +4696,10 @@ bool AvFormatDecoder::ProcessAudioPacket(AVStream *curstream, AVPacket *pkt,
 
         if (!(decodetype & kDecodeAudio) || (pkt->stream_index != audIdx)
             || !m_audio->HasAudioOut())
+        {    
+            LOG(VB_PLAYBACK, LOG_DEBUG, LOC + __func__ + " - audio packet rejected");
             break;
+        }
 
         if (firstloop && pkt->pts != (int64_t)AV_NOPTS_VALUE)
             lastapts = (long long)(av_q2d(curstream->time_base) * pkt->pts * 1000);
@@ -4701,7 +4707,12 @@ bool AvFormatDecoder::ProcessAudioPacket(AVStream *curstream, AVPacket *pkt,
         if (skipaudio && selectedTrack[kTrackTypeVideo].av_stream_index > -1)
         {
             if ((lastapts < lastvpts - (10.0 / fps)) || lastvpts == 0)
+            {
+                LOG(VB_PLAYBACK, LOG_DEBUG, LOC + __func__ + 
+                    QString("audio packet skipped lastapts=%1 lastvpts=%2 fps=%3")
+                        .arg(lastapts).arg(lastvpts).arg(fps));
                 break;
+            }
             else
                 skipaudio = false;
         }
@@ -4710,8 +4721,8 @@ bool AvFormatDecoder::ProcessAudioPacket(AVStream *curstream, AVPacket *pkt,
         if (firstvptsinuse && firstvpts && (lastapts < firstvpts))
         {
             LOG(VB_PLAYBACK | VB_TIMESTAMP, LOG_INFO, LOC +
-                QString("discarding early audio timecode %1 %2 %3")
-                    .arg(pkt->pts).arg(pkt->dts).arg(lastapts));
+                QString("discarding early audio timecode pts=%1 dts=%2 lastapts=%3 firstvpts=%4")
+                    .arg(pkt->pts).arg(pkt->dts).arg(lastapts).arg(firstvpts));
             break;
         }
         firstvptsinuse = false;
@@ -4812,12 +4823,14 @@ bool AvFormatDecoder::ProcessAudioPacket(AVStream *curstream, AVPacket *pkt,
         firstloop = false;
     }
 
+    LOG(VB_PLAYBACK, LOG_DEBUG, LOC + __func__ + " - end");
     return true;
 }
 
 // documented in decoderbase.h
 bool AvFormatDecoder::GetFrame(DecodeType decodetype)
 {
+    LOG(VB_PLAYBACK, LOG_DEBUG, LOC + __func__ + " - entered");
     AVPacket *pkt = NULL;
     bool have_err = false;
 
