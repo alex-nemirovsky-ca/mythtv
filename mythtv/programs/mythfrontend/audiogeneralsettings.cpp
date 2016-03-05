@@ -1051,6 +1051,9 @@ HostComboBox *AudioMixerSettings::MixerDevice()
     gc->addSelection("DirectX:", "DirectX:");
     gc->addSelection("Windows:", "Windows:");
 #endif
+#ifdef USING_OPENMAX
+    gc->addSelection("OpenMAX:",   "OpenMAX:");
+#endif
 #if !defined(USING_MINGW)
     gc->addSelection(tr("software"), "software");
 #endif
