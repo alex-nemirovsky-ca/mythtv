@@ -3331,14 +3331,14 @@ void AvFormatDecoder::MpegPreProcessPkt(AVStream *stream, AVPacket *pkt)
 
             if (changed)
             {
+                if (private_dec)
+                    private_dec->Reset();
+
                 m_parent->SetVideoParams(width, height, seqFPS, kScan_Detect);
 
                 current_width  = width;
                 current_height = height;
                 fps            = seqFPS;
-
-                if (private_dec)
-                    private_dec->Reset();
 
                 gopset = false;
                 prevgoppos = 0;
@@ -3438,6 +3438,10 @@ int AvFormatDecoder::H264PreProcessPkt(AVStream *stream, AVPacket *pkt)
 
         if (fps_changed || res_changed)
         {
+
+            if (private_dec)
+                private_dec->Reset();
+
             m_parent->SetVideoParams(width, height, seqFPS, kScan_Detect);
 
             current_width  = width;

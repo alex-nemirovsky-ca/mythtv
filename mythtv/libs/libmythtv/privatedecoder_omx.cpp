@@ -566,9 +566,8 @@ OMX_ERRORTYPE PrivateDecoderOMX::FreeOutputBuffersCB()
         m_lock.unlock();
 
         VideoFrame *frame = HDR2FRAME(hdr);
-        if (frame)
+        if (frame && FRAME2HDR(frame) == hdr)
         {
-            assert(FRAME2HDR(frame) == hdr);
             FRAMESETHDR(frame, 0);
         }
 
@@ -708,31 +707,29 @@ bool PrivateDecoderOMX::Reset(void)
 
     m_bStartTime = false;
 
-    // PGB This was previously preceded by  if (m_bSettingsHaveChanged)
-    // that is why it is indented
 
-        // Flush input
-        OMX_ERRORTYPE e;
-        e = m_videc.SendCommand(OMX_CommandFlush, m_videc.Base(), 0, 50);
-        if (e != OMX_ErrorNone)
-            return false;
-
-        // Flush output
-        e = m_videc.SendCommand(OMX_CommandFlush, m_videc.Base() + 1, 0, 50);
-        if (e != OMX_ErrorNone)
-            return false;
-
-        if (m_avctx && m_avctx->get_buffer)
-        {
-            // Request new buffers when GetFrame is next called
-            QMutexLocker lock(&m_lock);
-            m_bSettingsChanged = true;
-        }
-        else
-        {
-            // Re-submit the empty output buffers
-            FillOutputBuffers();
-        }
+    // Flush input
+    OMX_ERRORTYPE e;
+    e = m_videc.SendCommand(OMX_CommandFlush, m_videc.Base(), 0, 50);
+    if (e != OMX_ErrorNone)
+        return false;
+ 
+    // Flush output
+    e = m_videc.SendCommand(OMX_CommandFlush, m_videc.Base() + 1, 0, 50);
+    if (e != OMX_ErrorNone)
+        return false;
+ 
+    if (m_avctx && m_avctx->get_buffer)
+    {
+        // Request new buffers when GetFrame is next called
+        QMutexLocker lock(&m_lock);
+        m_bSettingsChanged = true;
+    }
+    else
+    {
+        // Re-submit the empty output buffers
+        FillOutputBuffers();
+    }
 
     LOG(VB_PLAYBACK, LOG_DEBUG, LOC + __func__ + " - end");
     return true;
