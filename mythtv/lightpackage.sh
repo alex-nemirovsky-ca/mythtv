@@ -4,7 +4,7 @@ scriptname=`readlink -e "$0"`
 scriptpath=`dirname "$scriptname"`
 #scriptname=`basename "$scriptname" .sh`
 cd $scriptpath
-echo Have you built with --prefix=/usr --runprefix=.. --compile-type=release ?
+echo Have you built with --prefix=/usr --runprefix=/usr --compile-type=release ?
 echo If not cancel now.
 subrelease=$1
 if [[ "$subrelease" == "" ]] ; then subrelease=0 ; fi
@@ -14,7 +14,7 @@ while [[ "$checksub" == Y ]] ; do
     packagever=`git describe|cut -c2-`-$subrelease
     installdir=`readlink -f ../../`
     arch=`dpkg-architecture -q DEB_TARGET_ARCH`
-    codename=`lsb_release -c`
+    codename=`lsb_release -c|cut -f 2`
     packagename=mythtv-light_${packagever}_${arch}_$codename
     echo Package $packagename
     if [[ -d $installdir/$packagename ]] ; then
