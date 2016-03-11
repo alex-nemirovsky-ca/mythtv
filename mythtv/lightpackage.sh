@@ -14,7 +14,8 @@ while [[ "$checksub" == Y ]] ; do
     packagever=`git describe|cut -c2-`-$subrelease
     installdir=`readlink -f ../../`
     arch=`dpkg-architecture -q DEB_TARGET_ARCH`
-    packagename=mythtv-light_${packagever}_$arch
+    codename=`lsb_release -c`
+    packagename=mythtv-light_${packagever}_${arch}_$codename
     echo Package $packagename
     if [[ -d $installdir/$packagename ]] ; then
         ls -l $installdir
