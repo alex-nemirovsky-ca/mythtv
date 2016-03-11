@@ -21,7 +21,7 @@ while [[ "$checksub" == Y ]] ; do
         ls -l $installdir
         echo $installdir/$packagename already exists - enter a subrelease number
         read -e subrelease
-        checksub=N
+        checksub=Y
     fi
 done
 rm -rf $installdir/$packagename $installdir/$packagename.deb
