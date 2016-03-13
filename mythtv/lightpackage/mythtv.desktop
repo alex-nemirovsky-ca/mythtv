@@ -5,5 +5,5 @@ GenericName=MythTV Viewer
 Exec=/usr/bin/mythfrontend --logpath /tmp
 Type=Application
 Encoding=UTF-8
-Icon=mythtv
+Icon=/usr/share/pixmaps/mythtv.png
 Categories=GNOME;Application;AudioVideo;Audio;Video
