@@ -37,7 +37,7 @@ Architecture: $arch
 Essential: no
 Installed-Size: `du -B1024 -d0 ../../$packagename | cut  -f1`
 Maintainer: Peter Bennett <pgbennett@comcast.net>
-Depends: libavahi-compat-libdnssd1, libqt5widgets5, libqt5script5, libqt5sql5-mysql, libqt5xml5, libqt5network5, libqt5webkit5, libexiv2-13
+Depends: libavahi-compat-libdnssd1, libqt5widgets5, libqt5script5, libqt5sql5-mysql, libqt5xml5, libqt5network5, libqt5webkit5, libexiv2-13 | libexiv2-14
 Conflicts: mythtv-common, mythtv-frontend, mythtv-backend
 Homepage: http://www.mythtv.org
 Description: MythTV Light

@@ -16,7 +16,8 @@ class MythMainWindowPrivate;
 #ifdef USE_OPENGL_QT5
 #include <QWidget>
 typedef QWidget MythPainterWindowWidget;
-#else
+#endif
+#ifndef USE_OPENGL_QT5
 #include <QGLWidget>
 typedef QGLWidget MythPainterWindowWidget;
 #endif
