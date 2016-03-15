@@ -8,22 +8,17 @@ echo Have you built with --prefix=/usr --runprefix=/usr --compile-type=release ?
 echo If not cancel now.
 subrelease=$1
 if [[ "$subrelease" == "" ]] ; then subrelease=0 ; fi
-checksub=Y
-while [[ "$checksub" == Y ]] ; do
-    checksub=N
-    packagever=`git describe|cut -c2-`-$subrelease
-    installdir=`readlink -f ../../`
-    arch=`dpkg-architecture -q DEB_TARGET_ARCH`
-    codename=`lsb_release -c|cut -f 2`
-    packagename=mythtv-light_${packagever}_${arch}_$codename
-    echo Package $packagename
-    if [[ -d $installdir/$packagename ]] ; then
-        ls -l $installdir
-        echo $installdir/$packagename already exists - enter a subrelease number
-        read -e subrelease
-        checksub=Y
-    fi
-done
+packagever=`git describe|cut -c2-`-$subrelease
+installdir=`readlink -f ../../`
+arch=`dpkg-architecture -q DEB_TARGET_ARCH`
+codename=`lsb_release -c|cut -f 2`
+packagename=mythtv-light_${packagever}_${arch}_$codename
+echo Package $packagename
+if [[ -d $installdir/$packagename ]] ; then
+    ls -l $installdir
+    echo $installdir/$packagename already exists - run with a subrelease number
+    exit 2
+fi
 rm -rf $installdir/$packagename $installdir/$packagename.deb
 mkdir -p $installdir/$packagename/DEBIAN
 make install INSTALL_ROOT=$installdir/$packagename |& tee $installdir/makeinstall.out
