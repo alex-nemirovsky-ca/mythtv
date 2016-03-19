@@ -4,7 +4,7 @@ scriptname=`readlink -e "$0"`
 scriptpath=`dirname "$scriptname"`
 #scriptname=`basename "$scriptname" .sh`
 cd $scriptpath
-echo Have you built with --prefix=/usr --runprefix=/usr --compile-type=release ?
+echo Have you built with --prefix=/usr --runprefix=/usr ?
 echo If not cancel now.
 subrelease=$1
 if [[ "$subrelease" == "" ]] ; then subrelease=0 ; fi
@@ -22,7 +22,8 @@ fi
 rm -rf $installdir/$packagename $installdir/$packagename.deb
 mkdir -p $installdir/$packagename/DEBIAN
 make install INSTALL_ROOT=$installdir/$packagename |& tee $installdir/makeinstall.out
-
+strip -g -v `find $installdir/$packagename/usr/bin/ -type f -executable`
+strip -g -v `find $installdir/$packagename/usr/lib/ -type f -executable`
 cat >$installdir/$packagename/DEBIAN/control <<FINISH
 Package: mythtv-light
 Version: $packagever
@@ -32,7 +33,7 @@ Architecture: $arch
 Essential: no
 Installed-Size: `du -B1024 -d0 ../../$packagename | cut  -f1`
 Maintainer: Peter Bennett <pgbennett@comcast.net>
-Depends: libavahi-compat-libdnssd1, libqt5widgets5, libqt5script5, libqt5sql5-mysql, libqt5xml5, libqt5network5, libqt5webkit5, libexiv2-13
+Depends: libavahi-compat-libdnssd1, libqt5widgets5, libqt5script5, libqt5sql5-mysql, libqt5xml5, libqt5network5, libqt5webkit5, libexiv2-13 | libexiv2-14, pciutils
 Conflicts: mythtv-common, mythtv-frontend, mythtv-backend
 Homepage: http://www.mythtv.org
 Description: MythTV Light
