@@ -9,6 +9,7 @@
 #include <QRect>
 
 #include "videooutbase.h"
+#include "mythscreentype.h"
 #include "omxcontext.h"
 
 class MythRenderEGL;
