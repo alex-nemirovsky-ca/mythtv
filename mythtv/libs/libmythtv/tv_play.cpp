@@ -77,6 +77,10 @@ using namespace std;
 #include "ringbuffer.h"                 // for RingBuffer, etc
 #include "tv_actions.h"                 // for ACTION_TOGGLESLEEP, etc
 
+#ifdef USING_OPENMAX
+#include "videoout_omx.h"
+#endif
+
 #if ! HAVE_ROUND
 #define round(x) ((int) ((x) + 0.5))
 #endif
@@ -2610,11 +2614,19 @@ void TV::HandleStateChange(PlayerContext *mctx, PlayerContext *ctx)
             QSize(QWIDGETSIZE_MAX, QWIDGETSIZE_MAX));
         mainWindow->setGeometry(player_bounds);
         mainWindow->ResizePainterWindow(player_bounds.size());
-        // PGB Do not disable the GUI when using openmax decoder,
+        // PGB Do not disable the GUI when using openmax renderer,
         // to ensure that space next to letterbox pictures
         // is painted.
-        QString decName = ctx->player->GetDecoder()->GetCodecDecoderName();
-        if (decName != "openmax" && !weDisabledGUI)
+        // Since there is no "GetName" virtual method in VideoOutput
+        // I have to use dynamic_cast to check the renderer type.
+        // If the dynamic cast returns 0 then it is NOT omx renderer.
+#ifdef USING_OPENMAX
+        VideoOutput *testVideoOutput = ctx->player->GetVideoOutput();
+        if (dynamic_cast<VideoOutputOMX*>(testVideoOutput) == 0
+            && !weDisabledGUI)
+#else
+        if (!weDisabledGUI)
+#endif
         {
             weDisabledGUI = true;
             GetMythMainWindow()->PushDrawDisabled();
