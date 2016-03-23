@@ -1178,8 +1178,19 @@ void VideoDisplayProfile::CreateOpenMAXProfiles(const QString &hostname)
     (void) QObject::tr("OpenMAX Normal", "Sample: OpenMAX Normal");
     DeleteProfileGroup("OpenMAX Normal", hostname);
     uint groupid = CreateProfileGroup("OpenMAX Normal", hostname);
+    CreateProfile(groupid, 1, ">=", 1280, 720, "", 0, 0,
+                  "openmax", 4, true, "openmax", "softblend", false,
+                  "openmaxadvanced", "onefield",
+                  "");
+    CreateProfile(groupid, 2, ">", 0, 0, "", 0, 0,
+                  "ffmpeg", 4, true, "openmax", "softblend", false,
+                  "openmaxadvanced", "onefield",
+                  "");
+    (void) QObject::tr("OpenMAX High Quality", "Sample: OpenMAX High Quality");
+    DeleteProfileGroup("OpenMAX High Quality", hostname);
+    groupid = CreateProfileGroup("OpenMAX High Quality", hostname);
     CreateProfile(groupid, 1, ">", 0, 0, "", 0, 0,
-                  "openmax", 1, true, "openmax", "softblend", false,
+                  "ffmpeg", 4, true, "openmax", "softblend", false,
                   "openmaxadvanced", "onefield",
                   "");
 }
