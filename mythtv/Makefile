@@ -1,4 +1,5 @@
 include config.mak
+export PREFIX
 
 MAKE_SUBDIRS = external
 QT_SUBDIRS   = libs filters html programs themes i18n locales
@@ -15,6 +16,7 @@ ifdef CONFIG_BINDINGS_PHP
     MAKE_SUBDIRS += bindings/php
 endif
 
+MAKE_SUBDIRS += contrib
 
 SUBDIRS += $(MAKE_SUBDIRS) $(QT_SUBDIRS)
 
