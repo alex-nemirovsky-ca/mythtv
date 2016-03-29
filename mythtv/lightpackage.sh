@@ -45,12 +45,13 @@ FINISH
 
 mkdir -p $installdir/$packagename/usr/share/applications/
 cp -f lightpackage/mythtv.desktop $installdir/$packagename/usr/share/applications/
+cp -f lightpackage/mythtv-setup.desktop $installdir/$packagename/usr/share/applications/
 
 mkdir -p $installdir/$packagename/usr/share/pixmaps/
-cp lightpackage/mythtv.png $installdir/$packagename/usr/share/pixmaps/
+cp -f lightpackage/mythtv.png $installdir/$packagename/usr/share/pixmaps/
 
 mkdir -p $installdir/$packagename/usr/share/menu/
-cp lightpackage/mythtv-frontend $installdir/$packagename/usr/share/menu/
+cp -f lightpackage/mythtv-frontend $installdir/$packagename/usr/share/menu/
 
 cd $installdir
 fakeroot dpkg-deb --build $packagename
