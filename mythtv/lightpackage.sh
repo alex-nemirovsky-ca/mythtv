@@ -4,9 +4,16 @@ scriptname=`readlink -e "$0"`
 scriptpath=`dirname "$scriptname"`
 #scriptname=`basename "$scriptname" .sh`
 cd $scriptpath
-echo Have you built with --prefix=/usr --runprefix=/usr ?
-echo If not cancel now.
-subrelease=$1
+sourcedir=$1
+subrelease=$2
+if [[ "$sourcedir" == "" ]] ; then
+    echo Before running this the latest version must be built
+    echo with --prefix=/usr --runprefix=/usr and installed
+    echo Parameter 1 = install dir
+    echo Parameter 2 = subrelease number
+    exit 2
+fi
+sourcedir=`readlink -f "$sourcedir"`
 if [[ "$subrelease" == "" ]] ; then subrelease=0 ; fi
 packagever=`git describe|cut -c2-`-$subrelease
 installdir=`readlink -f ../../`
@@ -20,8 +27,9 @@ if [[ -d $installdir/$packagename ]] ; then
     exit 2
 fi
 rm -rf $installdir/$packagename $installdir/$packagename.deb
+#make install INSTALL_ROOT=$installdir/$packagename |& tee $installdir/makeinstall.out
+cp -a "$sourcedir/" "$installdir/$packagename/"
 mkdir -p $installdir/$packagename/DEBIAN
-make install INSTALL_ROOT=$installdir/$packagename |& tee $installdir/makeinstall.out
 strip -g -v `find $installdir/$packagename/usr/bin/ -type f -executable`
 strip -g -v `find $installdir/$packagename/usr/lib/ -type f -executable`
 cat >$installdir/$packagename/DEBIAN/control <<FINISH
@@ -56,4 +64,4 @@ cp -f lightpackage/mythtv-frontend $installdir/$packagename/usr/share/menu/
 cd $installdir
 fakeroot dpkg-deb --build $packagename
 echo $PWD
-ls -l
+ls -l ${packagename}*
