@@ -2574,9 +2574,17 @@ void TV::HandleStateChange(PlayerContext *mctx, PlayerContext *ctx)
         // I have to use dynamic_cast to check the renderer type.
         // If the dynamic cast returns 0 then it is NOT omx renderer.
 #ifdef USING_OPENMAX
-        VideoOutput *testVideoOutput = ctx->player->GetVideoOutput();
-        if (dynamic_cast<VideoOutputOMX*>(testVideoOutput) == 0
-            && !weDisabledGUI)
+        bool isOpenMaxRender = false;
+        if (ctx != 0 && ctx->player != 0 )
+        {
+            VideoOutput *testVideoOutput = ctx->player->GetVideoOutput();
+            if (testVideoOutput != 0
+                && dynamic_cast<VideoOutputOMX*>(testVideoOutput) == 0)
+            {
+                isOpenMaxRender = true;
+            }
+        }
+        if (isOpenMaxRender && !weDisabledGUI)
 #else
         if (!weDisabledGUI)
 #endif
