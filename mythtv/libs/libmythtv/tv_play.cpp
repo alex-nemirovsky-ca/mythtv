@@ -2579,12 +2579,12 @@ void TV::HandleStateChange(PlayerContext *mctx, PlayerContext *ctx)
         {
             VideoOutput *testVideoOutput = ctx->player->GetVideoOutput();
             if (testVideoOutput != 0
-                && dynamic_cast<VideoOutputOMX*>(testVideoOutput) == 0)
+                && dynamic_cast<VideoOutputOMX*>(testVideoOutput) != 0)
             {
                 isOpenMaxRender = true;
             }
         }
-        if (isOpenMaxRender && !weDisabledGUI)
+        if (!isOpenMaxRender && !weDisabledGUI)
 #else
         if (!weDisabledGUI)
 #endif
