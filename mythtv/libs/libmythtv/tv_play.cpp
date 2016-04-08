@@ -2570,24 +2570,13 @@ void TV::HandleStateChange(PlayerContext *mctx, PlayerContext *ctx)
         // PGB Do not disable the GUI when using openmax renderer,
         // to ensure that space next to letterbox pictures
         // is painted.
-        // Since there is no "GetName" virtual method in VideoOutput
-        // I have to use dynamic_cast to check the renderer type.
-        // If the dynamic cast returns 0 then it is NOT omx renderer.
-#ifdef USING_OPENMAX
         bool isOpenMaxRender = false;
-        if (ctx != 0 && ctx->player != 0 )
+        if (ctx && ctx->player)
         {
-            VideoOutput *testVideoOutput = ctx->player->GetVideoOutput();
-            if (testVideoOutput != 0
-                && dynamic_cast<VideoOutputOMX*>(testVideoOutput) != 0)
-            {
-                isOpenMaxRender = true;
-            }
+            VideoOutput *vo = ctx->player->GetVideoOutput();
+            isOpenMaxRender = vo && vo->GetName() == "openmax";
         }
         if (!isOpenMaxRender && !weDisabledGUI)
-#else
-        if (!weDisabledGUI)
-#endif
         {
             weDisabledGUI = true;
             GetMythMainWindow()->PushDrawDisabled();
