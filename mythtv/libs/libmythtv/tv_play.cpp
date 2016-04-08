@@ -66,10 +66,6 @@ using namespace std;
 #include "DVD/dvdringbuffer.h"
 #include "Bluray/bdringbuffer.h"
 
-#ifdef USING_OPENMAX
-#include "videoout_omx.h"
-#endif
-
 #if ! HAVE_ROUND
 #define round(x) ((int) ((x) + 0.5))
 #endif
