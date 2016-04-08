@@ -77,10 +77,6 @@ using namespace std;
 #include "ringbuffer.h"                 // for RingBuffer, etc
 #include "tv_actions.h"                 // for ACTION_TOGGLESLEEP, etc
 
-#ifdef USING_OPENMAX
-#include "videoout_omx.h"
-#endif
-
 #if ! HAVE_ROUND
 #define round(x) ((int) ((x) + 0.5))
 #endif
