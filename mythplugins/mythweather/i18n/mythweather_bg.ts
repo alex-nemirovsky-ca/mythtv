@@ -1,42 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fr_FR">
+<TS version="2.0" language="bg_BG">
+<defaultcodec>UTF-8</defaultcodec>
 <context>
     <name>(Weather Screens)</name>
     <message>
         <location filename="../mythweather/weatherUtils.cpp" line="16"/>
         <source>Current Conditions</source>
-        <translation>Conditions actuelles</translation>
+        <translation>Текущо състояние</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherUtils.cpp" line="19"/>
         <source>Three Day Forecast</source>
-        <translation>Prévisions sur trois jours</translation>
+        <translation>Прогноза за 3 дни</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherUtils.cpp" line="22"/>
         <source>18 Hour Forecast</source>
-        <translation>Prévisions sur 18 heures</translation>
+        <translation>Прогноза за 18 часа</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherUtils.cpp" line="25"/>
         <source>Severe Weather Alerts</source>
-        <translation>Alertes météo importantes</translation>
+        <translation>Тревога за лошо време</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherUtils.cpp" line="28"/>
         <source>Six Day Forecast</source>
-        <translation>Prévisions sur six jours</translation>
+        <translation>Прогноза за 6 дни</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherUtils.cpp" line="31"/>
         <source>Static Map</source>
-        <translation>Carte statique</translation>
+        <translation>Статична Карта</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherUtils.cpp" line="34"/>
         <source>Animated Map</source>
-        <translation>Carte animée</translation>
+        <translation>Анимирана Карта</translation>
     </message>
 </context>
 <context>
@@ -44,7 +45,7 @@
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="57"/>
         <source>Finish</source>
-        <translation>Terminé</translation>
+        <translation>Край</translation>
     </message>
 </context>
 <context>
@@ -52,27 +53,27 @@
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="947"/>
         <source>Search</source>
-        <translation>Rechercher</translation>
+        <translation>Търсене</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="958"/>
         <source>Searching...</source>
-        <translation>En cours de recherche ...</translation>
+        <translation>Търси...</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="980"/>
         <source>Searching... Results: %1</source>
-        <translation>En cours de recherche... Résultats : %1</translation>
+        <translation>Търси... Резултати: %1</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="1038"/>
         <source>Search Complete. Results: %1</source>
-        <translation>Recherche terminée. Résultats : %1</translation>
+        <translation>Търсенето приключи. Резултати: %1</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="1059"/>
         <source>Source: %1</source>
-        <translation>Source : %1</translation>
+        <translation>Източник: %1</translation>
     </message>
 </context>
 <context>
@@ -80,19 +81,50 @@
     <message>
         <location filename="../mythweather/main.cpp" line="47"/>
         <source>Weather forecasts</source>
-        <translation>Prévisions météorologiques</translation>
+        <translation>Прогнози за времето</translation>
     </message>
     <message>
         <location filename="../mythweather/main.cpp" line="49"/>
         <source>Pause current page</source>
-        <translation>Pause sur la page actuelle</translation>
+        <translation>Пауза текуща страница</translation>
     </message>
     <message>
         <location filename="../mythweather/main.cpp" line="51"/>
         <location filename="../mythweather/main.cpp" line="53"/>
         <location filename="../mythweather/main.cpp" line="55"/>
         <source>Search List</source>
-        <translation>Liste de recherche</translation>
+        <translation>Списък за търсене</translation>
+    </message>
+</context>
+<context>
+    <name>QObject</name>
+    <message>
+        <source>Current Conditions</source>
+        <translation type="obsolete">Текущо състояние</translation>
+    </message>
+    <message>
+        <source>Three Day Forecast</source>
+        <translation type="obsolete">Прогноза за 3 дни</translation>
+    </message>
+    <message>
+        <source>18 Hour Forecast</source>
+        <translation type="obsolete">Прогноза за 18 часа</translation>
+    </message>
+    <message>
+        <source>Severe Weather Alerts</source>
+        <translation type="obsolete">Тревога за лошо време</translation>
+    </message>
+    <message>
+        <source>Six Day Forecast</source>
+        <translation type="obsolete">Прогноза за 6 дни</translation>
+    </message>
+    <message>
+        <source>Static Map</source>
+        <translation type="obsolete">Статична Карта</translation>
+    </message>
+    <message>
+        <source>Animated Map</source>
+        <translation type="obsolete">Анимирана Карта</translation>
     </message>
 </context>
 <context>
@@ -100,116 +132,116 @@
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="144"/>
         <source>Active Screens</source>
-        <translation>Pages actives</translation>
+        <translation>Активни Екрани</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="148"/>
         <source>Inactive Screens</source>
-        <translation>Pages inactives</translation>
+        <translation>Неактивни Екрани</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="169"/>
         <source>Finish</source>
-        <translation>Terminé</translation>
+        <translation>Край</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="226"/>
         <source>Add desired screen to the Active Screens list by pressing SELECT.</source>
-        <translation>Ajouter cette page à la liste des pages actives en appuyant sur SÉLECT.</translation>
+        <translation>Добавете желаният екран в Активни Екрани с бутона ИЗБОР.</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="229"/>
         <source>Sources</source>
-        <translation>Sources</translation>
+        <translation>Източници</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="245"/>
         <source>Units: </source>
-        <translation>Unités : </translation>
+        <translation>Мярка: </translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="247"/>
         <location filename="../mythweather/weatherSetup.cpp" line="586"/>
         <source>English Units</source>
-        <translation>Unités anglaises</translation>
+        <translation>Английска Мярка</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="247"/>
         <location filename="../mythweather/weatherSetup.cpp" line="587"/>
         <source>SI Units</source>
-        <translation>Unités du système international</translation>
+        <translation>SI Мярка</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="253"/>
         <source>Location: </source>
-        <translation>Localisation : </translation>
+        <translation>Място: </translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="254"/>
         <location filename="../mythweather/weatherSetup.cpp" line="257"/>
         <source>Not Defined</source>
-        <translation>Non défini</translation>
+        <translation>Не е Дефиниран</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="256"/>
         <source>Source: </source>
-        <translation>Source : </translation>
+        <translation>Източник:</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="260"/>
         <source>Press SELECT to </source>
-        <translation>Appuyer sur SÉLECT pour</translation>
+        <translation>Натиснете ИЗБОР за </translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="262"/>
         <source>change location; </source>
-        <translation>modifier la localisation; </translation>
+        <translation>промяна Място; </translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="264"/>
         <source>change units; </source>
-        <translation>changer d&apos;unités; </translation>
+        <translation>промяна Мярка; </translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="265"/>
         <source>move screen up or down; or remove screen.</source>
-        <translation>Déplacer la page vers le haut ou le bas; ou la supprimer.</translation>
+        <translation>Премести екрана нагоре надолу или изтрии.</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="493"/>
         <source>Manipulate Screen</source>
-        <translation>gérer la page</translation>
+        <translation>Коригиране Екран</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="507"/>
         <source>Move Up</source>
-        <translation>Déplacer vers le haut</translation>
+        <translation>Нагоре</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="508"/>
         <source>Move Down</source>
-        <translation>Déplacer vers le bas</translation>
+        <translation>Надолу</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="509"/>
         <source>Remove</source>
-        <translation>Supprimer</translation>
+        <translation>Изтрий</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="510"/>
         <source>Change Location</source>
-        <translation>Changer la localisation</translation>
+        <translation>Промяна Място</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="512"/>
         <location filename="../mythweather/weatherSetup.cpp" line="573"/>
         <source>Change Units</source>
-        <translation>Changer d&apos;unités</translation>
+        <translation>Промяна Мярка</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="513"/>
         <source>Cancel</source>
-        <translation>Annuler</translation>
+        <translation>Отказ</translation>
     </message>
 </context>
 <context>
@@ -217,7 +249,7 @@
     <message>
         <location filename="../mythweather/sourceManager.cpp" line="92"/>
         <source>Searching for scripts</source>
-        <translation>Recherche de scripts</translation>
+        <translation>Търсене за скриптове</translation>
     </message>
 </context>
 <context>
@@ -225,22 +257,22 @@
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="775"/>
         <source>Finish</source>
-        <translation>Terminé</translation>
+        <translation>Край</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="887"/>
         <source>Author: </source>
-        <translation>Fourni par : </translation>
+        <translation>Автор:</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="889"/>
         <source>Email: </source>
-        <translation>Email : </translation>
+        <translation>ел.поща: </translation>
     </message>
     <message>
         <location filename="../mythweather/weatherSetup.cpp" line="890"/>
         <source>Version: </source>
-        <translation>Version : </translation>
+        <translation>Версия: </translation>
     </message>
 </context>
 <context>
@@ -248,37 +280,37 @@
     <message>
         <location filename="strings.h" line="7"/>
         <source>MON</source>
-        <translation>LUN</translation>
+        <translation>ПОН</translation>
     </message>
     <message>
         <location filename="strings.h" line="8"/>
         <source>TUE</source>
-        <translation>MAR</translation>
+        <translation>ВТО</translation>
     </message>
     <message>
         <location filename="strings.h" line="9"/>
         <source>WED</source>
-        <translation>MER</translation>
+        <translation>СРЯ</translation>
     </message>
     <message>
         <location filename="strings.h" line="10"/>
         <source>THU</source>
-        <translation>JEU</translation>
+        <translation>ЧЕТ</translation>
     </message>
     <message>
         <location filename="strings.h" line="11"/>
         <source>FRI</source>
-        <translation>VEN</translation>
+        <translation>ПЕТ</translation>
     </message>
     <message>
         <location filename="strings.h" line="12"/>
         <source>SAT</source>
-        <translation>SAM</translation>
+        <translation>СЪБ</translation>
     </message>
     <message>
         <location filename="strings.h" line="13"/>
         <source>SUN</source>
-        <translation>DIM</translation>
+        <translation>НЕД</translation>
     </message>
 </context>
 <context>
@@ -286,546 +318,546 @@
     <message>
         <location filename="strings.h" line="34"/>
         <source>Cloudy</source>
-        <translation>Nuageux</translation>
+        <translation>Облачно</translation>
     </message>
     <message>
         <location filename="strings.h" line="35"/>
         <source>Mostly Cloudy</source>
-        <translation>Très nuageux</translation>
+        <translation>Предимно Облачно</translation>
     </message>
     <message>
         <location filename="strings.h" line="36"/>
         <source>Partly Cloudy</source>
-        <translation>Partiellement nuageux</translation>
+        <translation>Частично Обалачно</translation>
     </message>
     <message>
         <location filename="strings.h" line="37"/>
         <source>Light Rain</source>
-        <translation>Pluie légère</translation>
+        <translation>Слаб Дъжд</translation>
     </message>
     <message>
         <location filename="strings.h" line="38"/>
         <source>Showers</source>
-        <translation>Averses</translation>
+        <translation>Преваляване</translation>
     </message>
     <message>
         <location filename="strings.h" line="39"/>
         <location filename="strings.h" line="131"/>
         <source>Rain</source>
-        <translation>Pluie</translation>
+        <translation>Дъжд</translation>
     </message>
     <message>
         <location filename="strings.h" line="40"/>
         <source>AM Showers</source>
-        <translation>Averses matinales</translation>
+        <translation>Сутрешни Валежи</translation>
     </message>
     <message>
         <location filename="strings.h" line="41"/>
         <source>Fog</source>
-        <translation>Brouillard</translation>
+        <translation>Мъгла</translation>
     </message>
     <message>
         <location filename="strings.h" line="42"/>
         <source>Few Showers</source>
-        <translation>Quelques averses</translation>
+        <translation>Леки Валежи</translation>
     </message>
     <message>
         <location filename="strings.h" line="43"/>
         <source>Mostly Sunny</source>
-        <translation>Plutôt ensoleillé</translation>
+        <translation>Предимно Слънчево</translation>
     </message>
     <message>
         <location filename="strings.h" line="44"/>
         <source>Sunny</source>
-        <translation>Ensoleillé</translation>
+        <translation>Слънчево</translation>
     </message>
     <message>
         <location filename="strings.h" line="45"/>
         <source>Scattered Flurries</source>
-        <translation>Fortes rafales</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="46"/>
         <source>AM Clouds/PM Sun</source>
-        <translation>Nuages matin/Soleil l&apos;après-midi</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="47"/>
         <source>Isolated T-Storms</source>
-        <translation>Orages isolés</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="48"/>
         <source>Scattered Thunderstorms</source>
-        <translation>Orages violents</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="49"/>
         <source>PM Showers</source>
-        <translation>Averses l&apos;après-midi</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="50"/>
         <source>PM Showers/Wind</source>
-        <translation>Averses l&apos;après-midi/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="51"/>
         <source>Rain/Snow Showers</source>
-        <translation>Averses de Pluie/Neige</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="52"/>
         <source>Few Snow Showers</source>
-        <translation>Faibles averses de neige</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="53"/>
         <source>Cloudy/Wind</source>
-        <translation>Nuageux/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="54"/>
         <source>Flurries/Wind</source>
-        <translation>Bourrasques/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="55"/>
         <source>Mostly Cloudy/Windy</source>
-        <translation>Plutôt nuageux/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="56"/>
         <source>Rain/Thunder</source>
-        <translation>Pluie/Orage</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="57"/>
         <location filename="strings.h" line="134"/>
         <source>Partly Cloudy/Windy</source>
-        <translation>Nuageux/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="58"/>
         <source>AM Rain/Snow Showers</source>
-        <translation>Pluies/Neige matinales</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="59"/>
         <source>Light Rain/Wind</source>
-        <translation>Pluie légère/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="60"/>
         <source>Showers/Wind</source>
-        <translation>Averses/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="61"/>
         <source>Mostly Sunny/Wind</source>
-        <translation>Plutôt ensoleillé/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="62"/>
         <source>Flurries</source>
-        <translation>Bourrasques</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="63"/>
         <source>Rain/Wind</source>
-        <translation>Pluie/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="64"/>
         <source>Sct Flurries/Wind</source>
-        <translation>Fortes rafales/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="65"/>
         <source>Sct Strong Storms</source>
-        <translation>Orages violents</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="66"/>
         <source>PM T-Storms</source>
-        <translation>Orages l&apos;après-midi</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="67"/>
         <source>Thunderstorms</source>
-        <translation>Orages</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="68"/>
         <source>Sunny/Windy</source>
-        <translation>Ensoleillé/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="69"/>
         <source>AM Thunderstorms</source>
-        <translation>Orages matinaux</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="70"/>
         <source>AM Rain</source>
-        <translation>Pluie matinale</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="71"/>
         <source>Iso T-Storms/Wind</source>
-        <translation>Orages isolés/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="72"/>
         <source>Rain/Snow</source>
-        <translation>Pluie/Neige</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="73"/>
         <source>Sct T-Storms/Wind</source>
-        <translation>Orages violents/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="74"/>
         <source>AM Showers/Wind</source>
-        <translation>Averses matinales/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="75"/>
         <source>Sct Snow Showers</source>
-        <translation>Fortes averses de neige</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="76"/>
         <source>Snow to Ice/Wind</source>
-        <translation>Verglas/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="77"/>
         <source>Snow to Rain</source>
-        <translation>Neige fondue</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="78"/>
         <source>AM Light Rain</source>
-        <translation>Pluie légère le matin</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="79"/>
         <source>PM Light Rain</source>
-        <translation>Pluie légère l&apos;après-midi</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="80"/>
         <source>PM Rain</source>
-        <translation>Pluie l&apos;après-midi</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="81"/>
         <source>Snow Showers</source>
-        <translation>Averses de neige</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="82"/>
         <source>Rain to Snow</source>
-        <translation>Pluie puis neige</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="83"/>
         <source>PM Rain/Snow</source>
-        <translation>Pluie/Neige l&apos;après-midi</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="84"/>
         <source>Few Showers/Wind</source>
-        <translation>Quelques averses/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="85"/>
         <source>Snow/Wind</source>
-        <translation>Neige/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="86"/>
         <source>PM Rain/Snow Showers</source>
-        <translation>Averses Neige/Pluie l&apos;après-midi</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="87"/>
         <location filename="strings.h" line="98"/>
         <source>PM Rain/Snow/Wind</source>
-        <translation>Pluie/Neige/Vent l&apos;après-midi</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="88"/>
         <source>Rain/Snow Showers/Wind</source>
-        <translation>Vent Averses pluie/neige</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="89"/>
         <source>Rain/Snow/Wind</source>
-        <translation>Pluie/Neige/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="90"/>
         <source>Light Snow</source>
-        <translation>faibles averses neige</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="91"/>
         <source>PM Snow</source>
-        <translation>Neige l&apos;après-midi</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="92"/>
         <source>Few Snow Showers/Wind</source>
-        <translation>Quelques averses de neige/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="93"/>
         <source>Light Snow/Wind</source>
-        <translation>Quelques flocons/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="94"/>
         <source>Wintry Mix</source>
-        <translation>Temps hivernal</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="95"/>
         <source>AM Wintry Mix</source>
-        <translation>Temps hivernal le matin</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="96"/>
         <location filename="strings.h" line="132"/>
         <source>Hvy Rain/Freezing Rain</source>
-        <translation>Forte pluie/Pluie verglaçante</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="97"/>
         <source>AM Light Snow</source>
-        <translation>Neige légère le matin</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="99"/>
         <source>Rain/Freezing Rain</source>
-        <translation>Pluie/Pluie verglassante</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="100"/>
         <source>T-Storms/Wind</source>
-        <translation>Orages/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="101"/>
         <source>Sprinkles</source>
-        <translation>Averses</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="102"/>
         <source>AM Snow Showers</source>
-        <translation>Averses de neige le matin</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="103"/>
         <source>AM Clouds/PM Sun/Wind</source>
-        <translation>Matin nuageux/Soleil l&apos;après-midi/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="104"/>
         <source>AM Rain/Snow/Wind</source>
-        <translation>Pluie matinale/Neige/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="105"/>
         <source>Rain to Snow/Wind</source>
-        <translation>Pluie puis neige/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="106"/>
         <source>Snow to Wintry Mix</source>
-        <translation>Neige puis temps hivernal</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="107"/>
         <source>PM Snow Showers/Wind</source>
-        <translation>Averses de neige l&apos;après-midi/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="108"/>
         <source>Snow and Ice to Rain</source>
-        <translation>Neige et verglas puis pluie</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="109"/>
         <source>Heavy Rain</source>
-        <translation>Forte pluie</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="110"/>
         <source>AM Rain/Ice</source>
-        <translation>Pluie matinale/Grêle</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="111"/>
         <source>AM Snow Showers/Wind</source>
-        <translation>Averses de neige le matin/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="112"/>
         <source>AM Light Snow/Wind</source>
-        <translation>Neige légère le matin/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="113"/>
         <source>PM Light Rain/Wind</source>
-        <translation>Pluie légère l&apos;après-midi/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="114"/>
         <source>AM Light Wintry Mix</source>
-        <translation>Léger temps hivernal le matin</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="115"/>
         <source>PM Light Snow/Wind</source>
-        <translation>Légère neige l&apos;après-midi/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="116"/>
         <source>Heavy Rain/Wind</source>
-        <translation>Forte pluie/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="117"/>
         <source>PM Snow Shower</source>
-        <translation>Averses de neige l&apos;après-midi</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="118"/>
         <source>Snow to Rain/Wind</source>
-        <translation>Neige puis Pluie/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="119"/>
         <source>PM Light Rain/Ice</source>
-        <translation>Pluie légère l&apos;après-midi/Grêle</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="120"/>
         <source>AM Snow</source>
-        <translation>Neige le matin</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="121"/>
         <source>Snow to Ice</source>
-        <translation>Neige puis grêle</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="122"/>
         <source>Wintry Mix/Wind</source>
-        <translation>Temps hivernal/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="123"/>
         <source>PM Light Snow</source>
-        <translation>Neige légère l&apos;après-midi</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="124"/>
         <source>AM Drizzle</source>
-        <translation>Bruine matinale</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="125"/>
         <source>Strong Storms/Wind</source>
-        <translation>Gros orages/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="126"/>
         <source>PM Drizzle</source>
-        <translation>Bruine l&apos;après-midi</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="127"/>
         <source>Drizzle</source>
-        <translation>Bruine</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="128"/>
         <source>AM Light Rain/Wind</source>
-        <translation>Pluie légère le matin/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="129"/>
         <source>AM Rain/Wind</source>
-        <translation>Pluie matinale/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="130"/>
         <source>Wintry Mix to Snow</source>
-        <translation>Temps hivernal puis neige</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="133"/>
         <source>Snow Showers/Windy</source>
-        <translation>Averses de neige/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="135"/>
         <source>Light Rain Shower</source>
-        <translation>Légères averses</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="136"/>
         <source>Light Rain with Thunder</source>
-        <translation>Pluie légère et tonnerre</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="137"/>
         <source>Light Drizzle</source>
-        <translation>Bruine légère</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="138"/>
         <source>Mist</source>
-        <translation>Brume</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="139"/>
         <source>Smoke</source>
-        <translation>Fumée</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="140"/>
         <source>Haze</source>
-        <translation>Ciel voilé</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="141"/>
         <source>Light Snow Shower</source>
-        <translation>Légères averses de neige</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="142"/>
         <source>Light Snow Shower/ Windy</source>
-        <translation>Légères averses de neige/Vent</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="143"/>
         <source>Clear</source>
-        <translation>Temps clair</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="144"/>
         <source>A Few Clouds</source>
-        <translation>Quelques nuages</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="strings.h" line="145"/>
         <source>Fair</source>
-        <translation>Beau temps</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -833,82 +865,82 @@
     <message>
         <location filename="strings.h" line="16"/>
         <source>N</source>
-        <translation>N</translation>
+        <translation>С</translation>
     </message>
     <message>
         <location filename="strings.h" line="17"/>
         <source>NNE</source>
-        <translation>NNE</translation>
+        <translation>ССИ</translation>
     </message>
     <message>
         <location filename="strings.h" line="18"/>
         <source>NE</source>
-        <translation>NE</translation>
-    </message>
-    <message>
-        <location filename="strings.h" line="20"/>
-        <source>E</source>
-        <translation>E</translation>
-    </message>
-    <message>
-        <location filename="strings.h" line="22"/>
-        <source>SE</source>
-        <translation>SE</translation>
-    </message>
-    <message>
-        <location filename="strings.h" line="23"/>
-        <source>SSE</source>
-        <translation>SSE</translation>
-    </message>
-    <message>
-        <location filename="strings.h" line="24"/>
-        <source>S</source>
-        <translation>S</translation>
-    </message>
-    <message>
-        <location filename="strings.h" line="25"/>
-        <source>SSW</source>
-        <translation>SSO</translation>
-    </message>
-    <message>
-        <location filename="strings.h" line="26"/>
-        <source>SW</source>
-        <translation>SO</translation>
-    </message>
-    <message>
-        <location filename="strings.h" line="28"/>
-        <source>W</source>
-        <translation>O</translation>
-    </message>
-    <message>
-        <location filename="strings.h" line="30"/>
-        <source>NW</source>
-        <translation>NO</translation>
-    </message>
-    <message>
-        <location filename="strings.h" line="31"/>
-        <source>NNW</source>
-        <translation>NNO</translation>
+        <translation>СИ</translation>
     </message>
     <message>
         <location filename="strings.h" line="19"/>
         <source>ENE</source>
-        <translation>ENE</translation>
+        <translation>ИСИ</translation>
+    </message>
+    <message>
+        <location filename="strings.h" line="20"/>
+        <source>E</source>
+        <translation>И</translation>
     </message>
     <message>
         <location filename="strings.h" line="21"/>
         <source>ESE</source>
-        <translation>ESE</translation>
+        <translation>ИЮИ</translation>
+    </message>
+    <message>
+        <location filename="strings.h" line="22"/>
+        <source>SE</source>
+        <translation>ЮИ</translation>
+    </message>
+    <message>
+        <location filename="strings.h" line="23"/>
+        <source>SSE</source>
+        <translation>ЮЮИ</translation>
+    </message>
+    <message>
+        <location filename="strings.h" line="24"/>
+        <source>S</source>
+        <translation>Ю</translation>
+    </message>
+    <message>
+        <location filename="strings.h" line="25"/>
+        <source>SSW</source>
+        <translation>ЮЮЗ</translation>
+    </message>
+    <message>
+        <location filename="strings.h" line="26"/>
+        <source>SW</source>
+        <translation>ЮЗ</translation>
     </message>
     <message>
         <location filename="strings.h" line="27"/>
         <source>WSW</source>
-        <translation>OSO</translation>
+        <translation>ЗЮЗ</translation>
+    </message>
+    <message>
+        <location filename="strings.h" line="28"/>
+        <source>W</source>
+        <translation>З</translation>
     </message>
     <message>
         <location filename="strings.h" line="29"/>
         <source>WNW</source>
-        <translation>ONO</translation>
+        <translation>ЗСЗ</translation>
+    </message>
+    <message>
+        <location filename="strings.h" line="30"/>
+        <source>NW</source>
+        <translation>СЗ</translation>
+    </message>
+    <message>
+        <location filename="strings.h" line="31"/>
+        <source>NNW</source>
+        <translation>ССЗ</translation>
     </message>
 </context>
 <context>
@@ -916,122 +948,260 @@
     <message>
         <location filename="themestrings.h" line="5"/>
         <source>Humidity</source>
-        <translation>Humidité</translation>
+        <translation>Влажност</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="6"/>
         <source>Pressure</source>
-        <translation>Pression</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="9"/>
-        <source>Visibility</source>
-        <translation>Visibilité</translation>
+        <translation>Налягане</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="7"/>
         <source>Wind(Gust)</source>
-        <translation>Vent (Bourrasques)</translation>
+        <translation>Вятър(Порив)</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="8"/>
         <source>Wind Direction</source>
-        <translation>Direction du vent</translation>
+        <translation>Посока на Вятъра</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="9"/>
+        <source>Visibility</source>
+        <translation>Видимост</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="10"/>
         <source>Feels Like</source>
-        <translation>Sensation de</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="12"/>
-        <source>High</source>
-        <translation>Max.</translation>
+        <translation>Усеща се като</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="11"/>
         <source>Low</source>
-        <translation>Min.</translation>
+        <translation>Мин</translation>
     </message>
     <message>
-        <location filename="themestrings.h" line="16"/>
-        <source>Global Settings</source>
-        <translation>Réglages globaux</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="17"/>
-        <source>Seconds to display each page:</source>
-        <translation>Secondes d&apos;affichage de chaque page :</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="18"/>
-        <source>Retrieve data in the background:</source>
-        <translation>Récupérer les données en arrière-plan : </translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="20"/>
-        <source>Source Setup</source>
-        <translation>Configuration de la source</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="21"/>
-        <source>Data Retrieval Interval (minutes):</source>
-        <translation>Intervalle de récupération des données (minutes) : </translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="22"/>
-        <source>Source Update Timeout (seconds):</source>
-        <translation>Délai d&apos;attente de mise à jour de la source (secondes) : </translation>
+        <location filename="themestrings.h" line="12"/>
+        <source>High</source>
+        <translation>Макс</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="13"/>
         <source>Weather Alerts</source>
-        <translation>Alertes météo</translation>
+        <translation>Тревога за лошо време</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="14"/>
         <source>Temp</source>
-        <translation>Temp</translation>
+        <translation>Темп</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="15"/>
         <source>Precip</source>
-        <translation>Précip</translation>
+        <translation>Дъжд</translation>
     </message>
     <message>
-        <location filename="themestrings.h" line="46"/>
-        <source>Weather Screen Setup</source>
-        <translation>Configuration des écrans météo</translation>
+        <location filename="themestrings.h" line="16"/>
+        <source>Global Settings</source>
+        <translation>Глобални Настройки</translation>
     </message>
     <message>
-        <location filename="themestrings.h" line="47"/>
-        <source>Weather Source Setup</source>
-        <translation>Configuration des sources météo</translation>
+        <location filename="themestrings.h" line="17"/>
+        <source>Seconds to display each page:</source>
+        <translation>Секунди между страниците:</translation>
     </message>
     <message>
-        <location filename="themestrings.h" line="48"/>
-        <source>Source</source>
-        <translation>Source</translation>
+        <location filename="themestrings.h" line="18"/>
+        <source>Retrieve data in the background:</source>
+        <translation>Извлечи данните на заден фон:</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="19"/>
         <source>Screen Setup</source>
-        <translation>Configuration d&apos;écran</translation>
+        <translation>Настройка Екран</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="20"/>
+        <source>Source Setup</source>
+        <translation>Настройка Изтрочник</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="21"/>
+        <source>Data Retrieval Interval (minutes):</source>
+        <translation>Интервал за извличане данни(мин):</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="22"/>
+        <source>Source Update Timeout (seconds):</source>
+        <translation>Време за обновяване на източника (секунди):</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="23"/>
         <source>Location Search</source>
-        <translation>Recherche d&apos;emplacement</translation>
+        <translation>Търсене на Позиция</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="24"/>
         <source>Enter your current location, nearest large town or city. In some countries postal codes are also supported.</source>
-        <translation>Entrez votre emplacement actuel ou la grande ville la plus proche. Dans certains pays, le code postal est également supporté.</translation>
+        <translation>Въведете текуща позиция,най-близкият голям или малък град и пощенски код в някои държави.</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="25"/>
         <source>Enter Location:</source>
-        <translation>Entrez l&apos;emplacement :</translation>
+        <translation>Въведете Място: </translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="26"/>
+        <source>%DATE%, %TIME%</source>
+        <translation>%DATE%, %TIME%</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="27"/>
+        <source>Last Updated %1</source>
+        <translation>Последно обновен %1</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="28"/>
+        <source>High Temperature:  %1</source>
+        <translation>Максимална Температура:  %1</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="29"/>
+        <source>Low Temperature:  %1</source>
+        <translation>Минимална Температура:  %1</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="30"/>
+        <source>Temperature:  %1</source>
+        <translation>Температура:  %1</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="31"/>
+        <source>Chance of Precipitation:  %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="32"/>
+        <source>Weather Screen Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="33"/>
+        <source>This screen governs the behavior of the weather screens.  You can enable a background weather update which will run regardless of being on the weather screen, and configure how many seconds each screen will display.
+
+When you are done configuring the weather plugin, click &quot;Finish&quot; to continue.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="34"/>
+        <source>Retrieve data in background:</source>
+        <translation>Извлечи данните на заден фон:</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="35"/>
+        <source>OK</source>
+        <translation>ОК</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="36"/>
+        <source>Weather Setup</source>
+        <translation>Настройка Времето</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="37"/>
+        <source>Available Screens</source>
+        <translation>Налични Екрани</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="38"/>
+        <source>Active Screens</source>
+        <translation>Активни Екрани</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="39"/>
+        <source>Weather Script Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="40"/>
+        <source>This settings screen governs the behavior of individual weather scripts.  Select the script whose behavior you with to change and press the right arrow. Adjust the interval at which data is retrieved, and the timeout for accessing the site.
+
+When you have completed your changes, click &quot;Finish&quot; to continue.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="41"/>
+        <source>Finish</source>
+        <translation>Край</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="42"/>
+        <source>Search</source>
+        <translation>Търсене</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="43"/>
+        <source>Enter Current Location</source>
+        <translation>Въведете Текущо Място</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="44"/>
+        <source>This screen governs the behavior of the weather screens. You can enable a background weather update which will run regardless of being on the weather screen, and configure how many seconds each screen will display. When you are done configuring the weather plugin, click &quot;Finish&quot; to continue.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="46"/>
+        <source>Weather Screen Setup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="47"/>
+        <source>Weather Source Setup</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="48"/>
+        <source>Source</source>
+        <translation>Източник</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="49"/>
+        <source>Weather Location Search</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="50"/>
+        <source>Humidity:</source>
+        <translation>Влажност:</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="51"/>
+        <source>Pressure:</source>
+        <translation>Налягане:</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="52"/>
+        <source>Wind (Gust):</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Wind(Gust):</source>
+        <translation type="obsolete">Вятър(Порив):</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="53"/>
+        <source>Wind Direction:</source>
+        <translation>Посока на Вятъра:</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="54"/>
+        <source>Visibility:</source>
+        <translation>Видимост:</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="55"/>
+        <source>Feels Like:</source>
+        <translation>Усеща се като:</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="56"/>
@@ -1046,191 +1216,42 @@
     <message>
         <location filename="themestrings.h" line="58"/>
         <source>Global Weather Settings</source>
-        <translation>Météo - Réglages généraux</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="themestrings.h" line="59"/>
         <source>Seconds to display each page</source>
-        <translation>Secondes d&apos;affichage de chaque page</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="themestrings.h" line="60"/>
         <source>Retrieve data in the background</source>
-        <translation>Récupérer les données en arrière-plan</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="themestrings.h" line="61"/>
         <source>General weather options</source>
-        <oldsource>General weather plugin options</oldsource>
-        <translation>Options générales de la météo</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="themestrings.h" line="62"/>
         <source>Screen Settings</source>
-        <translation>Réglages des écrans</translation>
+        <translation>Настройки Екрани</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="63"/>
         <source>Choose which weather forecasts to display</source>
-        <translation>Choisir quelles prévisions météo afficher</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="themestrings.h" line="64"/>
         <source>Source Settings</source>
-        <translation>Réglages des sources</translation>
+        <translation>Настройка Изтрочник</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="65"/>
         <source>Configure the behavior of weather scripts</source>
-        <translation>Configurer le comportement des scripts météo</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="27"/>
-        <source>Last Updated %1</source>
-        <translation>Dernière mise à jour %1</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="26"/>
-        <source>%DATE%, %TIME%</source>
-        <translation>%DATE%, %TIME%</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="28"/>
-        <source>High Temperature:  %1</source>
-        <translation>Température max. :   %1</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="29"/>
-        <source>Low Temperature:  %1</source>
-        <translation>Température min. :  %1</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="30"/>
-        <source>Temperature:  %1</source>
-        <translation>Température :  %1</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="31"/>
-        <source>Chance of Precipitation:  %1</source>
-        <translation>Précipitation probable:  %1</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="32"/>
-        <source>Weather Screen Settings</source>
-        <translation>Réglages des écrans météo</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="33"/>
-        <source>This screen governs the behavior of the weather screens.  You can enable a background weather update which will run regardless of being on the weather screen, and configure how many seconds each screen will display.
-
-When you are done configuring the weather plugin, click &quot;Finish&quot; to continue.</source>
-        <oldsource>This screen governs the behavior of the weather screens.  You can enable a background weather update which will run regardless of being on the weather screen, and configure how many seconds each screen will display.
-
-When you are done configuring the Weather Plugin, click &quot;Finish&quot; to continue.</oldsource>
-        <translation>Cet écran régit le comportement des écrans météo. Vous pouvez activer la mise à jour de la météo en arrière-plan qui sera exécuté que vous soyez ou non dans l&apos;écran de la météo, et configurer le nombre de secondes d&apos;affichage de chaque écran .
-
-Lorsque vous avez terminé de configurer le module météo, cliquez sur &quot;Terminer&quot; pour continuer.</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="34"/>
-        <source>Retrieve data in background:</source>
-        <translation>Récupérer les données en arrière-plan : </translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="35"/>
-        <source>OK</source>
-        <translation>Valider</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="36"/>
-        <source>Weather Setup</source>
-        <translation>Configuration météo</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="37"/>
-        <source>Available Screens</source>
-        <translation>Écrans disponibles</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="38"/>
-        <source>Active Screens</source>
-        <translation>Écrans actifs</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="39"/>
-        <source>Weather Script Settings</source>
-        <translation>Configuration des scripts météo</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="40"/>
-        <source>This settings screen governs the behavior of individual weather scripts.  Select the script whose behavior you with to change and press the right arrow. Adjust the interval at which data is retrieved, and the timeout for accessing the site.
-
-When you have completed your changes, click &quot;Finish&quot; to continue.</source>
-        <translation>Cet écran régit le comportement de chaque script météo. Sélectionnez le script que vous souhaitez modifier et appuyez sur la flèche droite. Réglez l&apos;intervalle entre les récupérations de données et le délai d&apos;attente pour accéder au site.
-
-Lorsque vous avez terminé de configurer le module météo, cliquez sur &quot;Terminer&quot; pour continuer.</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="41"/>
-        <source>Finish</source>
-        <translation>Terminé</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="42"/>
-        <source>Search</source>
-        <translation>Rechercher</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="43"/>
-        <source>Enter Current Location</source>
-        <translation>Entrez votre emplacement</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="44"/>
-        <source>This screen governs the behavior of the weather screens. You can enable a background weather update which will run regardless of being on the weather screen, and configure how many seconds each screen will display. When you are done configuring the weather plugin, click &quot;Finish&quot; to continue.</source>
-        <translatorcomment>tradcution existante</translatorcomment>
-        <translation>Cet écran régit le comportement des écrans météo. Vous pouvez activer la mise à jour de la météo en arrière-plan qui sera exécuté que vous soyez ou non dans l&apos;écran de la météo, et configurer le nombre de secondes d&apos;affichage de chaque écran . Lorsque vous avez terminé de configurer le module météo, cliquez sur &quot;Terminer&quot; pour continuer.</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="45"/>
-        <source>Weather settings</source>
-        <translation>Configuration météo</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="49"/>
-        <source>Weather Location Search</source>
-        <translation>Recherche de l&apos;emplacement météo</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="50"/>
-        <source>Humidity:</source>
-        <translation>Humidité :</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="51"/>
-        <source>Pressure:</source>
-        <translation>Pression :</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="52"/>
-        <source>Wind (Gust):</source>
-        <oldsource>Wind(Gust):</oldsource>
-        <translation>Vent (Bourrasques) :</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="53"/>
-        <source>Wind Direction:</source>
-        <translation>Direction du vent :</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="54"/>
-        <source>Visibility:</source>
-        <translation>Visibilité.:</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="55"/>
-        <source>Feels Like:</source>
-        <translation>Température ressentie :</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1238,12 +1259,12 @@ Lorsque vous avez terminé de configurer le module météo, cliquez sur &quot;Te
     <message>
         <location filename="../mythweather/weather.cpp" line="99"/>
         <source>Paused</source>
-        <translation>En pause</translation>
+        <translation>Пауза</translation>
     </message>
     <message>
         <location filename="../mythweather/weather.cpp" line="211"/>
         <source>None of the configured screens are complete in this theme (missing copyright information).</source>
-        <translation>Les écrans configurés sont incomplets dans ce thème (absence d&apos;information de droit d&apos;auteur).</translation>
+        <translation>Незавършени екрани в тази тема (Липсва информация за авторско право).</translation>
     </message>
 </context>
 <context>
@@ -1251,37 +1272,37 @@ Lorsque vous avez terminé de configurer le module météo, cliquez sur &quot;Te
     <message>
         <location filename="../mythweather/weatherScreen.cpp" line="218"/>
         <source>Sunday</source>
-        <translation>Dimanche</translation>
+        <translation>Неделя</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherScreen.cpp" line="221"/>
         <source>Monday</source>
-        <translation>Lundi</translation>
+        <translation>Понеделник</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherScreen.cpp" line="224"/>
         <source>Tuesday</source>
-        <translation>Mardi</translation>
+        <translation>Вторник</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherScreen.cpp" line="227"/>
         <source>Wednesday</source>
-        <translation>Mercredi</translation>
+        <translation>Сряда</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherScreen.cpp" line="230"/>
         <source>Thursday</source>
-        <translation>Jeudi</translation>
+        <translation>Четвъртък</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherScreen.cpp" line="233"/>
         <source>Friday</source>
-        <translation>Vendredi</translation>
+        <translation>Петък</translation>
     </message>
     <message>
         <location filename="../mythweather/weatherScreen.cpp" line="236"/>
         <source>Saturday</source>
-        <translation>Samedi</translation>
+        <translation>Събота</translation>
     </message>
 </context>
 </TS>
