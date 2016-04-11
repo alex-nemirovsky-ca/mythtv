@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fr_FR">
+<TS version="2.0" language="bg_BG">
+<defaultcodec>UTF-8</defaultcodec>
 <context>
     <name>BookmarkEditor</name>
     <message>
         <location filename="../mythbrowser/bookmarkeditor.cpp" line="66"/>
         <source>Edit Bookmark Details</source>
-        <translation>Éditer les détails du signet</translation>
+        <translation>Промени детайли в Любими</translation>
     </message>
     <message>
         <location filename="../mythbrowser/bookmarkeditor.cpp" line="68"/>
         <source>Enter Bookmark Details</source>
-        <translation>Entrer les détails du signet</translation>
+        <translation>Въведи детайли в Любими</translation>
     </message>
     <message>
         <location filename="../mythbrowser/bookmarkeditor.cpp" line="139"/>
         <source>Select a category</source>
-        <translation>Sélectionner une catégorie</translation>
+        <translation>Избор на категория</translation>
     </message>
 </context>
 <context>
@@ -26,69 +27,68 @@
         <source>No bookmarks defined.
 
 Use the &apos;Add Bookmark&apos; menu option to add new bookmarks</source>
-        <translation>Vous n&apos;avez aucun signet.
-
-Utiliser l&apos;option « Ajouter un signet » du menu pour ajouter de nouveaux signets</translation>
+        <translation>Не са дефинирани Любими.
+Използвайте &apos;Добави в Любими&apos; за да добавите нови Любими</translation>
     </message>
     <message>
         <location filename="../mythbrowser/bookmarkmanager.cpp" line="288"/>
         <source>Actions</source>
-        <translation>Actions</translation>
+        <translation>Действия</translation>
     </message>
     <message>
         <location filename="../mythbrowser/bookmarkmanager.cpp" line="303"/>
         <source>Set Homepage</source>
-        <translation>Définir la page d&apos;acceuil</translation>
+        <translation>Задаване начална страница</translation>
     </message>
     <message>
         <location filename="../mythbrowser/bookmarkmanager.cpp" line="304"/>
         <source>Add Bookmark</source>
-        <translation>Ajouter un signet</translation>
+        <translation>Добави в Любими</translation>
     </message>
     <message>
         <location filename="../mythbrowser/bookmarkmanager.cpp" line="308"/>
         <source>Edit Bookmark</source>
-        <translation>Éditer un signet</translation>
+        <translation>Промени Любими</translation>
     </message>
     <message>
         <location filename="../mythbrowser/bookmarkmanager.cpp" line="309"/>
         <source>Delete Bookmark</source>
-        <translation>Supprimer un signet</translation>
+        <translation>Изтрии от Любими</translation>
     </message>
     <message>
         <location filename="../mythbrowser/bookmarkmanager.cpp" line="310"/>
         <source>Show Bookmark</source>
-        <translation>Afficher un signet</translation>
+        <translation>Покажи Любими</translation>
     </message>
     <message>
         <location filename="../mythbrowser/bookmarkmanager.cpp" line="315"/>
         <source>Delete Marked</source>
-        <translation>Supprimer les marqués</translation>
+        <translation>Изтрий Маркираните</translation>
     </message>
     <message>
         <location filename="../mythbrowser/bookmarkmanager.cpp" line="316"/>
         <source>Show Marked</source>
-        <translation>Afficher les marqués</translation>
+        <translation>Покажи Маркираните</translation>
     </message>
     <message>
         <location filename="../mythbrowser/bookmarkmanager.cpp" line="317"/>
         <source>Clear Marked</source>
-        <translation>Effacer les marqués</translation>
+        <translation>Изчисти Маркираните</translation>
     </message>
     <message>
         <location filename="../mythbrowser/bookmarkmanager.cpp" line="320"/>
         <source>Settings</source>
-        <translation>Réglages</translation>
+        <translation>Настройки</translation>
     </message>
     <message>
         <location filename="../mythbrowser/bookmarkmanager.cpp" line="526"/>
         <source>Are you sure you want to delete the selected bookmark?</source>
-        <translation>Êtes-vous sûr de vouloir supprimer le signet sélectionné ?</translation>
+        <translation>Сигурни ли сте че изкате да изтриете избора в Любими?</translation>
     </message>
     <message>
         <location filename="../mythbrowser/bookmarkmanager.cpp" line="570"/>
         <source>Are you sure you want to delete the marked bookmarks?</source>
-        <translation>Êtes-vous sûr de vouloir supprimer les signets marqués ?</translation>
+        <translation>Сигурни ли сте че изкате да изтриете маркираните в Любими?</translation>
     </message>
 </context>
 <context>
@@ -96,32 +96,32 @@ Utiliser l&apos;option « Ajouter un signet » du menu pour ajouter de nouveaux 
     <message>
         <location filename="../mythbrowser/bookmarkmanager.cpp" line="48"/>
         <source>MythBrowser Settings</source>
-        <translation>Réglages MythBrowser</translation>
+        <translation>Настройки</translation>
     </message>
     <message>
         <location filename="../mythbrowser/bookmarkmanager.cpp" line="131"/>
         <source>This is the command that will be used to show the web browser. Use &apos;Internal&apos; to use the built in web browser&apos;. %ZOOM% and %URL% will be replaced with the zoom level and URL list.</source>
-        <translation>C&apos;est la commande qui sera utilisée pour afficher le navigateur web. Écrire « Internal » pour utiliser le navigateur web intégré. %ZOOM% et %URL% seront remplacés par le niveau de grossissement et la liste d&apos;URL.</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../mythbrowser/bookmarkmanager.cpp" line="135"/>
         <source>This is the default text size that will be used. Valid values for the Internal browser are from 0.3 to 5.0 with 1.0 being normal size less than 1 is smaller and greater than 1 is larger than normal size.</source>
-        <translation>C&apos;est la taille de texte utilisée par défaut. Les valeurs autorisées pour le navigateur interne vont de 0.3 à 5.0 avec 1.0 étant la taille normale, moins de 1 étant plus petit et plus de 1 étant plus grand que la taille normale.</translation>
+        <translation>Това е големината на текста, която се използва. Валидни стойности са от 0.3 до 5.0 като 1.0 е нормална големина, по-малко от 1 за по-малък текст и по-голямо от 1 за по-голям размер.</translation>
     </message>
     <message>
         <location filename="../mythbrowser/bookmarkmanager.cpp" line="140"/>
         <source>If checked this will enable browser plugins if the &apos;Internal&apos; browser is being used.</source>
-        <translation>Si coché, les modules externes du navigateur seront activés si le navigateur interne est utilisé.</translation>
+        <translation>Ако е включено ще разреши използването на добавки при &apos;Internal&apos; browser.</translation>
     </message>
     <message>
         <location filename="../mythbrowser/bookmarkmanager.cpp" line="143"/>
         <source>Exit without saving settings</source>
-        <translation>Sortir sans sauvegarder</translation>
+        <translation>Изход без запис</translation>
     </message>
     <message>
         <location filename="../mythbrowser/bookmarkmanager.cpp" line="145"/>
         <source>Save settings and Exit</source>
-        <translation>Sauvegarder et quitter</translation>
+        <translation>Запис настройки и Изход</translation>
     </message>
 </context>
 <context>
@@ -130,52 +130,52 @@ Utiliser l&apos;option « Ajouter un signet » du menu pour ajouter de nouveaux 
         <location filename="../mythbrowser/mythbrowser.cpp" line="148"/>
         <location filename="../mythbrowser/mythbrowser.cpp" line="361"/>
         <source>Enter URL</source>
-        <translation>Entrer l&apos;URL</translation>
+        <translation>Въведи URL</translation>
     </message>
     <message>
         <location filename="../mythbrowser/mythbrowser.cpp" line="280"/>
         <source>Loading...</source>
-        <translation>Chargement...</translation>
+        <translation>Зареждане...</translation>
     </message>
     <message>
         <location filename="../mythbrowser/mythbrowser.cpp" line="350"/>
         <source>Actions</source>
-        <translation>Actions</translation>
+        <translation>Действия</translation>
     </message>
     <message>
         <location filename="../mythbrowser/mythbrowser.cpp" line="364"/>
         <source>Back</source>
-        <translation>Retour</translation>
+        <translation>Назад</translation>
     </message>
     <message>
         <location filename="../mythbrowser/mythbrowser.cpp" line="367"/>
         <source>Forward</source>
-        <translation>Avancer</translation>
+        <translation>Напред</translation>
     </message>
     <message>
         <location filename="../mythbrowser/mythbrowser.cpp" line="369"/>
         <source>Zoom In</source>
-        <translation>Zoom avant</translation>
+        <translation>Увеличи</translation>
     </message>
     <message>
         <location filename="../mythbrowser/mythbrowser.cpp" line="370"/>
         <source>Zoom Out</source>
-        <translation>Zoom arrière</translation>
+        <translation>Намали</translation>
     </message>
     <message>
         <location filename="../mythbrowser/mythbrowser.cpp" line="371"/>
         <source>New Tab</source>
-        <translation>Nouvel onglet</translation>
+        <translation>Нов Таб</translation>
     </message>
     <message>
         <location filename="../mythbrowser/mythbrowser.cpp" line="374"/>
         <source>Delete Tab</source>
-        <translation>Supprimer l&apos;onglet</translation>
+        <translation>Изтрии Таб</translation>
     </message>
     <message>
         <location filename="../mythbrowser/mythbrowser.cpp" line="376"/>
         <source>Add Bookmark</source>
-        <translation>Ajouter un signet</translation>
+        <translation>Добави в Любими</translation>
     </message>
 </context>
 <context>
@@ -183,27 +183,27 @@ Utiliser l&apos;option « Ajouter un signet » du menu pour ajouter de nouveaux 
     <message>
         <location filename="../mythbrowser/main.cpp" line="106"/>
         <source>Move to next browser tab</source>
-        <translation>Atteindre la prochaine adresse de navigation</translation>
+        <translation>Отиди на следващ Таб</translation>
     </message>
     <message>
         <location filename="../mythbrowser/main.cpp" line="108"/>
         <source>Move to previous browser tab</source>
-        <translation>Atteindre la précédente adresse de navigation</translation>
+        <translation>Отиди на предишен Таб</translation>
     </message>
     <message>
         <location filename="../mythbrowser/main.cpp" line="111"/>
         <source>Show the bookmark manager</source>
-        <translation>Afficher le gestionnaire des signets</translation>
+        <translation>Покажи управление на отметките</translation>
     </message>
     <message>
         <location filename="../mythbrowser/main.cpp" line="113"/>
         <source>Show the webbrowser homepage</source>
-        <translation>Afficher la page d&apos;accueil du navigateur</translation>
+        <translation>Покажи начална страница</translation>
     </message>
     <message>
         <location filename="../mythbrowser/main.cpp" line="116"/>
         <source>Internal Web Browser</source>
-        <translation>Navigateur Web interne</translation>
+        <translation>Вграден Web Броузър</translation>
     </message>
 </context>
 <context>
@@ -211,12 +211,119 @@ Utiliser l&apos;option « Ajouter un signet » du menu pour ajouter de nouveaux 
     <message>
         <location filename="themestrings.h" line="5"/>
         <source>Bookmark Manager</source>
-        <translation>Gestionnaire des signets</translation>
+        <translation>Управление на отметките</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="22"/>
+        <source>Web Page</source>
+        <translation>Интернет страница</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="23"/>
+        <source>Rating Settings</source>
+        <translation>Настройки рейтинг</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="17"/>
+        <source>Browser Command:</source>
+        <translation>Команда на броузера:</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="18"/>
+        <source>Text Size:</source>
+        <translation>Размер на текст:</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="19"/>
+        <source>Enable plugins:</source>
+        <translation>Разрешаване на добавка:</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="15"/>
+        <source>Cancel</source>
+        <translation>Отказ</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="14"/>
+        <source>Homepage:</source>
+        <translation>Начална страница:</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="16"/>
+        <source>OK</source>
+        <translation>ОК</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="24"/>
+        <source>%DATE%, %TIME%</source>
+        <translation>%DATE%, %TIME%</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="25"/>
+        <source>Web Bookmarks</source>
+        <translation>Уеб отметки</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="26"/>
+        <source>Browse your favorite web sites.</source>
+        <translation>Отваряне на любимите сайтове.</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="27"/>
+        <source>Browser:</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="28"/>
+        <source>Enable browser plugins (Flash, etc):</source>
+        <translation>Разрешаване на добавките (Flash и др.):</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="29"/>
+        <source>Configure Web Browser</source>
+        <translation>Настройка на Уеб броузера</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="30"/>
+        <source>You can edit the name, URL, and category for the selected Web Site on this screen.
+
+When you have finished editing, select &quot;OK&quot; or &quot;Cancel&quot; to continue.</source>
+        <translation>Променете име, Адрес и категория за избраната Интернет страница.
+
+Като приключите натиснете &quot;OK&quot; или &quot;Отказ&quot; за да продължите.</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="10"/>
+        <source>Category:</source>
+        <translation>Категория:</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="12"/>
+        <source>Name:</source>
+        <translation>Име:</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="13"/>
+        <source>URL:</source>
+        <translation>URL:</translation>
+    </message>
+    <message>
+        <source>Genre:</source>
+        <translation type="obsolete">Жанр:</translation>
+    </message>
+    <message>
+        <source>Channel:</source>
+        <translation type="obsolete">Канал:</translation>
+    </message>
+    <message>
+        <location filename="themestrings.h" line="31"/>
+        <source>Click to choose from existing categories...</source>
+        <translation>Натиснете за избор от налични категории...</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="6"/>
         <source>Category</source>
-        <translation>Catégorie</translation>
+        <translation>Категория</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="7"/>
@@ -226,7 +333,7 @@ Utiliser l&apos;option « Ajouter un signet » du menu pour ajouter de nouveaux 
     <message>
         <location filename="themestrings.h" line="8"/>
         <source>Name</source>
-        <translation>Nom</translation>
+        <translation>Име</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="9"/>
@@ -234,158 +341,59 @@ Utiliser l&apos;option « Ajouter un signet » du menu pour ajouter de nouveaux 
         <translation>URL</translation>
     </message>
     <message>
-        <location filename="themestrings.h" line="10"/>
-        <source>Category:</source>
-        <translation>Catégorie :</translation>
-    </message>
-    <message>
         <location filename="themestrings.h" line="11"/>
         <source>Find...</source>
-        <translation>Rechercher...</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="12"/>
-        <source>Name:</source>
-        <translation>Nom :</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="13"/>
-        <source>URL:</source>
-        <translation>URL :</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="15"/>
-        <source>Cancel</source>
-        <translation>Annuler</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="17"/>
-        <source>Browser Command:</source>
-        <translation>Commande de navigation :</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="18"/>
-        <source>Text Size:</source>
-        <translation>Taille texte :</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="25"/>
-        <source>Web Bookmarks</source>
-        <translation>Signets Web</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="24"/>
-        <source>%DATE%, %TIME%</source>
-        <translation>%DATE%, %TIME%</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="22"/>
-        <source>Web Page</source>
-        <translation>Page Web</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="26"/>
-        <source>Browse your favorite web sites.</source>
-        <translation>Parcourir vos sites Web favoris.</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="27"/>
-        <source>Browser:</source>
-        <translation>Navigateur :</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="28"/>
-        <source>Enable browser plugins (Flash, etc):</source>
-        <translation>Activer les modules externes du navigateur :</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="16"/>
-        <source>OK</source>
-        <translation>Valider</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="23"/>
-        <source>Rating Settings</source>
-        <translation>Réglages de l&apos;évaluation</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="29"/>
-        <source>Configure Web Browser</source>
-        <translation>Configurer le navigateur Internet</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="30"/>
-        <source>You can edit the name, URL, and category for the selected Web Site on this screen.
-
-When you have finished editing, select &quot;OK&quot; or &quot;Cancel&quot; to continue.</source>
-        <translation>Vous pouvez modifier le nom, l&apos;adresse URL et la catégorie du site Web sélectionné dans cet écran.
-
-Après modifications, choisir &quot;Valider&quot; ou &quot;Annuler&quot; pour continuer.</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="31"/>
-        <source>Click to choose from existing categories...</source>
-        <translation>Cliquer pour choisir une catégorie existante ...</translation>
+        <translation>Търси...</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="20"/>
         <source>Find</source>
-        <translation>Rechercher</translation>
+        <translation>Търси</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="32"/>
         <source>Webbrowser</source>
-        <translation>Navigateur</translation>
+        <translation>Уеб броузер</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="33"/>
         <source>Bookmarks</source>
-        <translation>Signets</translation>
+        <translation>Отметки</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="34"/>
         <source>Url</source>
-        <translation>Url</translation>
+        <translation>Адрес</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="35"/>
         <source>Homepage</source>
-        <translation>Page d&apos;accueil</translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="themestrings.h" line="36"/>
         <source>Edit Bookmark</source>
-        <translation>Éditer un signet</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="14"/>
-        <source>Homepage:</source>
-        <translation>Page d&apos;accueil :</translation>
+        <translation>Промени Отметки</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="37"/>
         <source>Save</source>
-        <translation>Sauvegarder</translation>
+        <translation>Запази</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="38"/>
         <source>Browser Settings</source>
-        <translation>Configuration du navigateur</translation>
+        <translation>Настройки на броузера</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="39"/>
         <source>Enable browser plugins (Flash, etc)</source>
-        <translation>Activer les modules externes du navigateur (Flash, etc)</translation>
+        <translation>Разрешаване на добавки (Flash и др.)</translation>
     </message>
     <message>
         <location filename="themestrings.h" line="21"/>
         <source>Enable plugins</source>
-        <translation>Activer les modules externes</translation>
-    </message>
-    <message>
-        <location filename="themestrings.h" line="19"/>
-        <source>Enable plugins:</source>
-        <translation>Activer les modules externes :</translation>
+        <translation>Разрешаване добавки</translation>
     </message>
 </context>
 <context>
@@ -393,7 +401,7 @@ Après modifications, choisir &quot;Valider&quot; ou &quot;Annuler&quot; pour co
     <message>
         <location filename="../mythbrowser/webpage.cpp" line="128"/>
         <source>Loading...</source>
-        <translation>Chargement...</translation>
+        <translation>Зареждане...</translation>
     </message>
 </context>
 </TS>
