@@ -15,7 +15,7 @@ if [[ "$sourcedir" == "" ]] ; then
 fi
 sourcedir=`readlink -f "$sourcedir"`
 if [[ "$subrelease" == "" ]] ; then subrelease=0 ; fi
-packagever=`git describe|cut -c2-`-$subrelease
+packagever=`git describe --dirty|cut -c2-`-$subrelease
 installdir=`readlink -f ../../`
 arch=`dpkg-architecture -q DEB_TARGET_ARCH`
 codename=`lsb_release -c|cut -f 2`
