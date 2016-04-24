@@ -126,6 +126,9 @@ class CECAdapterPriv
             return false;
         }
 
+        // initialise the host on which libCEC is running
+        adapter->InitVideoStandalone();
+
         // find adapters
         cec_adapter *devices = new cec_adapter[MAX_CEC_DEVICES];
         uint8_t num_devices = adapter->FindAdapters(devices, MAX_CEC_DEVICES, NULL);
@@ -231,7 +234,16 @@ class CECAdapterPriv
 
         switch (command.opcode)
         {
-            // TODO
+            case CEC_OPCODE_MENU_REQUEST:
+                cec_keypress key;
+                key.keycode = CEC_USER_CONTROL_CODE_ROOT_MENU;
+                key.duration = 5;
+                HandleKeyPress(key);
+                // SetMenuState could be used to disable the TV menu here
+                // That may be a user-unfriendly thing to do
+                // So they have to see both the TV menu and the MythTV menu
+                break;
+
             default:
                 break;
         }
@@ -721,36 +733,36 @@ CECAdapter::CECAdapter() : MThread("CECAdapter"), m_priv(new CECAdapterPriv)
 
 void CECAdapter::run()
 {
-    for (;;) {
+    RunProlog();
+    while (IsValid()) {
         // Note that a lock is used because the QWaitCondition needs it
         // None of the other HandleActions callers need the lock because
         // they call HandleActions at open/close time, when
         // nothing else can be calling it....
         gHandleActionsLock->lock();
         gActionsReady->wait(gHandleActionsLock);
-        m_priv->HandleActions();
+        if (IsValid()) {
+            m_priv->HandleActions();
+        }
         gHandleActionsLock->unlock();
     }
+    RunEpilog();
 }
 
 CECAdapter::~CECAdapter()
 {
     QMutexLocker lock(gLock);
 
-    // stop thread
-    if (isRunning())
-    {
-        LOG(VB_GENERAL, LOG_DEBUG, LOC + "Stopping thread.");
-        exit();
-    }
-
     // delete the actual adapter
     m_priv->Close();
+    // Free the thread
+    gActionsReady->wakeAll();
+    // Wait for it to end
+    wait();
 }
 
 bool CECAdapter::IsValid(void)
 {
-    QMutexLocker lock(gLock);
     return m_priv->valid;
 }
 
