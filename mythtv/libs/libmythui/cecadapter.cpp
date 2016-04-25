@@ -264,6 +264,7 @@ class CECAdapterPriv
 
         QString code;
         int action = 0;
+        Qt::KeyboardModifier modifier = Qt::NoModifier;
         switch (key.keycode)
         {
             case CEC_USER_CONTROL_CODE_NUMBER0:
@@ -377,9 +378,11 @@ class CECAdapterPriv
             case CEC_USER_CONTROL_CODE_PLAY:
                 action = Qt::Key_P;
                 code   = "PLAY";
+                // Play set to control-p to differentiate from pause
+                modifier = Qt::ControlModifier;
                 break;
             case CEC_USER_CONTROL_CODE_PAUSE:
-                action = Qt::Key_P; // same as play
+                action = Qt::Key_P;
                 code   = "PAUSE";
                 break;
             case CEC_USER_CONTROL_CODE_STOP:
@@ -578,7 +581,7 @@ class CECAdapterPriv
             return 1;
 
         GetMythUI()->ResetScreensaver();
-        QKeyEvent* ke = new QKeyEvent(QEvent::KeyPress, action, Qt::NoModifier);
+        QKeyEvent* ke = new QKeyEvent(QEvent::KeyPress, action, modifier);
         qApp->postEvent(GetMythMainWindow(), (QEvent*)ke);
 
         return 1;
