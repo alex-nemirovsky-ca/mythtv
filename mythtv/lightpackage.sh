@@ -30,8 +30,8 @@ rm -rf $installdir/$packagename $installdir/$packagename.deb
 #make install INSTALL_ROOT=$installdir/$packagename |& tee $installdir/makeinstall.out
 cp -a "$sourcedir/" "$installdir/$packagename/"
 mkdir -p $installdir/$packagename/DEBIAN
-strip -g -v `find $installdir/$packagename/usr/bin/ -type f -executable`
-strip -g -v `find $installdir/$packagename/usr/lib/ -type f -executable`
+strip -g `find $installdir/$packagename/usr/bin/ -type f -executable`
+strip -g `find $installdir/$packagename/usr/lib/ -type f -executable -name '*.so*'`
 cat >$installdir/$packagename/DEBIAN/control <<FINISH
 Package: mythtv-light
 Version: $packagever
