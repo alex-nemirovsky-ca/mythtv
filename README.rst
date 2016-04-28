@@ -1,23 +1,17 @@
 =====
-MythTV Project Info
+MythTV Light Project Info
 =====
 
-Useful project links
------
+This is a fork of MythTV. It will be kept up to date and I try to get fixes from here into the main MythTV repository.
 
- - `Trac bug tracker <http://code.mythtv.org/trac>`_
+Currently you will find Raspberry Pi support here that is ahead of the main `MythTV Project <https://github.com/MythTV/mythtv>`_.
 
-   - Please note: If you create a pull request, we expect a corresponding
-     ticket to be created in Trac with a link to the pull request in it.  
-     Trac is our canonical bug tracking location, and many of our developers
-     may not notice the pull request otherwise.
+Please log bugs related to this repository and build in the `Issue Tracker <https://github.com/bennettpeter/mythtv/issues>`_
 
-   - Please also note that we only support code that is from the canonical
-     fork at https://github.com/MythTV  For other forks, please send bug
-     reports to the owners of the fork where the code was committed.
+Please log MythTV bugs in `Trac bug tracker <http://code.mythtv.org/trac>`_
 
- - `Forums <https://forum.mythtv.org>`_
- - `Documentation wiki <http://www.mythtv.org/wiki>`_
- - `Mailing lists <http://lists.mythtv.org/mailman/listinfo>`_
- - `IRC <irc://freenode.net/mythtv-users>`_ at Freenode.net, #mythtv-users
+- `Forums <https://forum.mythtv.org>`_
+- `Documentation wiki <http://www.mythtv.org/wiki>`_
+- `Mailing lists <http://lists.mythtv.org/mailman/listinfo>`_
+- `IRC <irc://freenode.net/mythtv-users>`_ at Freenode.net, #mythtv-users
 
