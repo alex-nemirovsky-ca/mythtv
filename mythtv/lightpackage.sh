@@ -46,9 +46,7 @@ Conflicts: mythtv-common, mythtv-frontend, mythtv-backend
 Homepage: http://www.mythtv.org
 Description: MythTV Light
  Light weight package that installs MythTV in one package, front end
- and backend. Does not install database or services. This package runs 
- the front end successfully on Raspberry Pi 2 or better. Backend 
- programs are not recommended to be run on a Raspberry Pi.
+ and backend. Does not install database or services.
 FINISH
 
 mkdir -p $installdir/$packagename/usr/share/applications/
