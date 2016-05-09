@@ -49,7 +49,7 @@ Description: MythTV Light
  and backend. Does not install database or services.
 FINISH
 
-if [[ "$arch" == armhf ]] ; then
+if [[ "$arch" == armhf && "$codename" == xenial ]] ; then
     environ="env LD_LIBRARY_PATH=/usr/lib/arm-linux-gnueabihf/mesa-egl "
 else
     environ=
