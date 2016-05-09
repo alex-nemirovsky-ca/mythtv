@@ -49,15 +49,21 @@ Description: MythTV Light
  and backend. Does not install database or services.
 FINISH
 
+if [[ "$arch" == armhf ]] ; then
+    environ="env LD_LIBRARY_PATH=/usr/lib/arm-linux-gnueabihf/mesa-egl "
+else
+    environ=
+fi
+
 mkdir -p $installdir/$packagename/usr/share/applications/
-cp -f lightpackage/mythtv.desktop $installdir/$packagename/usr/share/applications/
-cp -f lightpackage/mythtv-setup.desktop $installdir/$packagename/usr/share/applications/
+sed -e "s~@env@~$environ~" < lightpackage/mythtv.desktop > $installdir/$packagename/usr/share/applications/mythtv.desktop
+sed -e "s~@env@~$environ~" < lightpackage/mythtv-setup.desktop > $installdir/$packagename/usr/share/applications/mythtv-setup.desktop
 
 mkdir -p $installdir/$packagename/usr/share/pixmaps/
 cp -f lightpackage/mythtv.png $installdir/$packagename/usr/share/pixmaps/
 
 mkdir -p $installdir/$packagename/usr/share/menu/
-cp -f lightpackage/mythtv-frontend $installdir/$packagename/usr/share/menu/
+sed -e "s~@env@~$environ~" < lightpackage/mythtv-frontend > $installdir/$packagename/usr/share/menu/mythtv-frontend
 
 cd $installdir
 fakeroot dpkg-deb --build $packagename
