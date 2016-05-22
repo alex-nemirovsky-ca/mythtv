@@ -1021,6 +1021,16 @@ int AvFormatDecoder::FindStreamInfo(void)
         silence_ffmpeg_logging = true;
     int retval = avformat_find_stream_info(ic, NULL);
     silence_ffmpeg_logging = false;
+    // Sometimes it is returning -1 when the stream is valid
+    // and the results are still returned correctly.
+    // -1 is not a valid AVERROR code, so let's just carry on
+    // as it if was correct.
+    if (retval == -1)
+    {
+        LOG(VB_GENERAL, LOG_ERR, LOC +
+            QString("Ignoring invalid return code %1 from avformat_find_stream_info").arg(retval));
+        retval=0;
+    }
     return retval;
 }
 
