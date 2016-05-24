@@ -9,3 +9,4 @@ A fork that closely follows [MythTV](https://github.com/MythTV/mythtv), with pre
 - CEC support to allow use of your TV remote to control playback [Ticket 12746](https://code.mythtv.org/trac/ticket/12746)
 - Installation packages for Raspbian Jessie and Ubuntu Xenial. See [Releases page](https://github.com/bennettpeter/mythtv/releases).
 
+Peter
