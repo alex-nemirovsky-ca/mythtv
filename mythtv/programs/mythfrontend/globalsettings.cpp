@@ -1247,9 +1247,17 @@ PlaybackProfileConfigs::PlaybackProfileConfigs(const QString &str) :
 #endif
 
 #ifdef USING_OPENMAX
-    if (!profiles.contains("OpenMAX Normal"))
+    if (!profiles.contains("OpenMAX Normal") &&
+        !profiles.contains("OpenGL High Quality"))
     {
         VideoDisplayProfile::CreateOpenMAXProfiles(host);
+        profiles = VideoDisplayProfile::GetProfiles(host);
+    }
+    // Special case for user upgrading from version that only
+    // has OpenMAX Normal
+    else if (!profiles.contains("OpenGL High Quality"))
+    {
+        VideoDisplayProfile::CreateOpenMAXProfiles(host,1);
         profiles = VideoDisplayProfile::GetProfiles(host);
     }
 #endif
