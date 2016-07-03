@@ -1879,7 +1879,7 @@ int main(int argc, char **argv)
     }
 
     MythMainWindow *mainWindow = GetMythMainWindow();
-#if CONFIG_DARWIN
+#if CONFIG_DARWIN || defined USING_OPENGLES
     mainWindow->Init(QT_PAINTER);
 #else
     mainWindow->Init();

@@ -170,6 +170,7 @@ android {
 using_openmax {
     contains( HAVE_OPENMAX_BROADCOM, yes ) {
         using_opengl {
+            DEFINES += USING_OPENGLES
             # For raspberry pi raspbian
             QMAKE_RPATHDIR += $${RUNPREFIX}/share/mythtv/lib
             createlinks.path = $${PREFIX}/share/mythtv/lib
