@@ -2616,7 +2616,7 @@ static HostComboBox *ThemePainter()
     gc->addSelection(QCoreApplication::translate("(Common)", "Qt"), QT_PAINTER);
     gc->addSelection(QCoreApplication::translate("(Common)", "Auto", "Automatic"),
                      AUTO_PAINTER);
-#ifdef USING_OPENGL
+#if defined USING_OPENGL && ! defined USING_OPENGLES
     gc->addSelection(QCoreApplication::translate("(Common)", "OpenGL 2"),
                      OPENGL2_PAINTER);
     gc->addSelection(QCoreApplication::translate("(Common)", "OpenGL 1"),

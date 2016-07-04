@@ -466,7 +466,7 @@ bool VideoOutputOMX::Init(          // Return true if successful
 
     if (!osdIsSet)
         LOG(VB_GENERAL, LOG_INFO, LOC + __func__ +
-                ": OSD display uses softmerge");
+                ": OSD display uses softblend");
 
     MoveResize();
 

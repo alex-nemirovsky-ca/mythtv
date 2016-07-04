@@ -1181,6 +1181,7 @@ void VideoDisplayProfile::CreateVAAPIProfiles(const QString &hostname)
 // upgrade = 1 means adding high quality
 void VideoDisplayProfile::CreateOpenMAXProfiles(const QString &hostname, int upgrade)
 {
+#ifdef OSD_EGL
     (void) QObject::tr("OpenMAX High Quality", "Sample: OpenMAX High Quality");
     DeleteProfileGroup("OpenMAX High Quality", hostname);
     uint groupid = CreateProfileGroup("OpenMAX High Quality", hostname);
@@ -1188,6 +1189,7 @@ void VideoDisplayProfile::CreateOpenMAXProfiles(const QString &hostname, int upg
                   "openmax", 4, true, "openmax", "opengl", true,
                   "openmaxadvanced", "onefield",
                   "");
+#endif
     if (!upgrade) {
         (void) QObject::tr("OpenMAX Normal", "Sample: OpenMAX Normal");
         DeleteProfileGroup("OpenMAX Normal", hostname);

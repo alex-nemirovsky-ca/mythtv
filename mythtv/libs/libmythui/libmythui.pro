@@ -184,7 +184,6 @@ mingw | win32-msvc*{
 }
 
 using_opengl {
-    DEFINES += USE_OPENGL_PAINTER
     SOURCES += mythpainter_ogl.cpp    mythrender_opengl.cpp
     SOURCES += mythrender_opengl2.cpp
     HEADERS += mythpainter_ogl.h    mythrender_opengl.h mythrender_opengl_defs.h
@@ -194,6 +193,7 @@ using_opengl {
         HEADERS += mythrender_opengl2es.h
     }
     !using_opengles {
+        DEFINES += USE_OPENGL_PAINTER
         SOURCES += mythrender_opengl1.cpp
         HEADERS += mythrender_opengl1.h mythrender_opengl_defs1.h
     }
